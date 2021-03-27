@@ -30,8 +30,6 @@ namespace WindowsFormsApp3
         {
             InitializeComponent();
 
-
-
             SqlDataReader reader = conexion.obtenerCategorias();
 
             while (reader.Read())
@@ -49,46 +47,13 @@ namespace WindowsFormsApp3
                 }
             }
 
-            cmbGolf.Items.AddRange(TipoGolf.ToArray());
-            cmbTenis.Items.AddRange(TipoTenis.ToArray());
-            safdsfadsfsdaf
+
         }
-         while (reader.Read())
-              {
-                  Console.WriteLine(String.Format("{0} {1} {2}", reader["id_cat"],reader["Descripcion"], reader["Tipo"]));
-              }
-
-        // conectarBDT.Close();
-
-
-
         private void BtnRegistar_Click(object sender, EventArgs e)
         {
 
             MessageBox.Show(DateTime.Now + " ");
-            sadfsadfsdafsad
         }
-       /* public SqlCommand insertar()
-        {
-            
-            SqlConnection CON = new SqlConnection(@"Data Source= DESKTOP-JH5TK9P;Initial Catalog=Torneo_Golf; Integrated Security= True");
-        string query = ("INSERT INTO Torneo_Golf(Nombre) VALUES (Nombre)");
-        CON.Open();
-            SqlCommand command = new SqlCommand(query, CON);
-
-
-        command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
-            /*command.Parameters.AddWithValue("@Apaterno", txtPaterno.Text);
-            command.Parameters.AddWithValue("@Amaterno", txtMaterno.Text);
-            command.Parameters.AddWithValue("@Club", txtClub.Text);
-            command.Parameters.AddWithValue("@Celular", txtCelular.Text);
-            command.Parameters.AddWithValue("@Correo", txtCorreo.Text);
-
-            command.ExecuteNonQuery();
-            MessageBox.Show("jjklk");
-            }
-    */
-
         private void btnRegistar_Click_1(object sender, EventArgs e)
         {
            
@@ -142,15 +107,6 @@ namespace WindowsFormsApp3
             {
                 MessageBox.Show("El nombre ingresado es incorrecto");
             }
-
-
-            /* while (reader.Read())
-              {
-                  Console.WriteLine(String.Format("{0} {1} {2}", reader["id_cat"],reader["Descripcion"], reader["Tipo"]));
-              }*/
-
-            // conectarBDT.Close();
-
         }
 
 
@@ -163,8 +119,6 @@ namespace WindowsFormsApp3
                 cmbGolf.Enabled = false;
                 usuario.CategoriaDescripcion = chkTenis.Text;
                 chkGolf.Checked = false;
-
-                sbyte;aldvnml'skadnvlk'sadnvlk'asd'
             }
         }
 
@@ -176,7 +130,6 @@ namespace WindowsFormsApp3
                 cmbTenis.Enabled = false;
                 usuario.CategoriaDescripcion = chkGolf.Text;
                 chkTenis.Checked = false;
-                sakjvbskadjbvjaklsdvlkaj'sd'
             }
         }
 
@@ -187,12 +140,6 @@ namespace WindowsFormsApp3
             videoCapture1.Audio_CaptureDevice = videoCapture1.Audio_CaptureDevicesInfo[0].Name;
             videoCapture1.Mode = VisioForge.Types.VFVideoCaptureMode.VideoPreview;
             videoCapture1.Start();
-             while (reader.Read())
-              {
-                  Console.WriteLine(String.Format("{0} {1} {2}", reader["id_cat"],reader["Descripcion"], reader["Tipo"]));
-              }*/
-
-            // conectarBDT.Close();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace WindowsFormsApp3
 {
     class Conexion
     {
-        string cadena = @"Data Source= DESKTOP-JH5TK9P;Initial Catalog=Torneo_Golf; Integrated Security= True";
+        string cadena = @"Data Source= {nombrePC};Initial Catalog=Torneo_Golf; Integrated Security= True";
         public SqlConnection conectarBDT = new SqlConnection();
 
         public Conexion()
@@ -41,6 +41,7 @@ namespace WindowsFormsApp3
 
         public SqlDataReader obtenerCategorias()
         {
+            cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
             conectarBDT.ConnectionString = cadena;
             conectarBDT.Open();
 
