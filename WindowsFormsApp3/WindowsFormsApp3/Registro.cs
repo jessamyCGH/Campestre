@@ -175,7 +175,7 @@ namespace WindowsFormsApp3
             videoCapture1.Audio_CaptureDevice = videoCapture1.Audio_CaptureDevicesInfo[0].Name;
             videoCapture1.Mode = VisioForge.Types.VFVideoCaptureMode.VideoPreview;
             videoCapture1.Start();
-            mi mama me mima
+            NO PUEDO CREER QUE DE VOLAR NO TENGO EL PODER
         }
     }
 }
