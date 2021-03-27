@@ -51,7 +51,7 @@ namespace WindowsFormsApp3
 
             cmbGolf.Items.AddRange(TipoGolf.ToArray());
             cmbTenis.Items.AddRange(TipoTenis.ToArray());
-
+            safdsfadsfsdaf
         }
 
 
@@ -60,7 +60,7 @@ namespace WindowsFormsApp3
         {
 
             MessageBox.Show(DateTime.Now + " ");
-
+            sadfsadfsdafsad
         }
        /* public SqlCommand insertar()
         {
@@ -138,7 +138,7 @@ namespace WindowsFormsApp3
             }
 
 
-
+            asdvbskdabvk;sadjvbljkasd;bvkl;asjdvbkjasbdvk
 
         }
 
@@ -152,8 +152,8 @@ namespace WindowsFormsApp3
                 cmbGolf.Enabled = false;
                 usuario.CategoriaDescripcion = chkTenis.Text;
                 chkGolf.Checked = false;
-                
-                
+
+                sbyte;aldvnml'skadnvlk'sadnvlk'asd'
             }
         }
 
@@ -165,6 +165,7 @@ namespace WindowsFormsApp3
                 cmbTenis.Enabled = false;
                 usuario.CategoriaDescripcion = chkGolf.Text;
                 chkTenis.Checked = false;
+                sakjvbskadjbvjaklsdvlkaj'sd'
             }
         }
 
@@ -175,7 +176,8 @@ namespace WindowsFormsApp3
             videoCapture1.Audio_CaptureDevice = videoCapture1.Audio_CaptureDevicesInfo[0].Name;
             videoCapture1.Mode = VisioForge.Types.VFVideoCaptureMode.VideoPreview;
             videoCapture1.Start();
-            NO PUEDO CREER QUE DE VOLAR NO TENGO EL PODER
+            ,sdflksdvlksd
+                sdlavnlsjdnvlkasdnvlkasdv
         }
     }
 }
