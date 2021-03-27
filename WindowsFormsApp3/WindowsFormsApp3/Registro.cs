@@ -53,6 +53,12 @@ namespace WindowsFormsApp3
             cmbTenis.Items.AddRange(TipoTenis.ToArray());
             safdsfadsfsdaf
         }
+         while (reader.Read())
+              {
+                  Console.WriteLine(String.Format("{0} {1} {2}", reader["id_cat"],reader["Descripcion"], reader["Tipo"]));
+              }
+
+        // conectarBDT.Close();
 
 
 
@@ -138,13 +144,18 @@ namespace WindowsFormsApp3
             }
 
 
-            asdvbskdabvk;sadjvbljkasd;bvkl;asjdvbkjasbdvk
+            /* while (reader.Read())
+              {
+                  Console.WriteLine(String.Format("{0} {1} {2}", reader["id_cat"],reader["Descripcion"], reader["Tipo"]));
+              }*/
+
+            // conectarBDT.Close();
 
         }
 
-       
 
-            private void chkTenis_CheckedChanged(object sender, EventArgs e)
+
+        private void chkTenis_CheckedChanged(object sender, EventArgs e)
         {
             if(chkTenis.Checked )
             {
@@ -176,8 +187,12 @@ namespace WindowsFormsApp3
             videoCapture1.Audio_CaptureDevice = videoCapture1.Audio_CaptureDevicesInfo[0].Name;
             videoCapture1.Mode = VisioForge.Types.VFVideoCaptureMode.VideoPreview;
             videoCapture1.Start();
-            ,sdflksdvlksd
-                sdlavnlsjdnvlkasdnvlkasdv
+             while (reader.Read())
+              {
+                  Console.WriteLine(String.Format("{0} {1} {2}", reader["id_cat"],reader["Descripcion"], reader["Tipo"]));
+              }*/
+
+            // conectarBDT.Close();
         }
     }
 }
