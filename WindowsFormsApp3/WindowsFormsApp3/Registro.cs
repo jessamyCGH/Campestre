@@ -145,6 +145,11 @@ namespace WindowsFormsApp3
             videoCapture1.Start();
 
         }
+
+        private void btnCapturar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

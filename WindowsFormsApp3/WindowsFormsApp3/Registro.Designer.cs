@@ -115,6 +115,7 @@ namespace WindowsFormsApp3
             this.btnCapturar.TabIndex = 57;
             this.btnCapturar.Text = "Capturar";
             this.btnCapturar.UseVisualStyleBackColor = true;
+            this.btnCapturar.Click += new System.EventHandler(this.btnCapturar_Click);
             // 
             // groupBox2
             // 
