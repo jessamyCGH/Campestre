@@ -148,7 +148,7 @@ namespace WindowsFormsApp3
 
         private void btnCapturar_Click(object sender, EventArgs e)
         {
-
+           
         }
     }
     
