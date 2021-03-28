@@ -84,6 +84,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Check.Designer.cs">
+      <DependentUpon>Check.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Registro.cs">
@@ -100,6 +106,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Check.resx">
+      <DependentUpon>Check.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +123,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -130,11 +140,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resource\alimentos.png" />
+    <None Include="Resource\concierto.png" />
+    <None Include="Resource\cerveza.png" />
+    <None Include="Resource\Apertura.png" />
+    <None Include="Resource\Clausura.png" />
     <Content Include="Resource\confi.png" />
+    <None Include="Resource\golf.png" />
     <Content Include="Resource\huella.png" />
     <Content Include="Resource\justifi2.png" />
     <Content Include="Resource\pagos.png" />
     <Content Include="Resource\personal.png" />
+    <None Include="Resource\tennis.png" />
     <Content Include="Resource\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
