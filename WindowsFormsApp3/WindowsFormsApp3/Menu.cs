@@ -21,5 +21,23 @@ namespace WindowsFormsApp3
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            //Creamos un objeto del Form check para despues modificar sus propiedades
+            Check check = new Check();
+            //Al objeto anterior le damos un titulo
+            check.Text = "Menu";
+            //Un tipo de borde para el objeto check
+            check.FormBorderStyle = FormBorderStyle.FixedDialog;
+            //Le removemos el boton de minimizar al objeto check
+            check.MinimizeBox = false;
+            //Le removemos el boton de maximizar al objeto check
+            check.MaximizeBox = false;
+
+            //Mostramos el Form check
+            check.Show();
+        }
     }
 }

@@ -40,13 +40,14 @@ namespace WindowsFormsApp3
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnConcierto
             // 
             this.btnConcierto.Location = new System.Drawing.Point(513, 316);
-            this.btnConcierto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConcierto.Margin = new System.Windows.Forms.Padding(2);
             this.btnConcierto.Name = "btnConcierto";
             this.btnConcierto.Size = new System.Drawing.Size(148, 43);
             this.btnConcierto.TabIndex = 15;
@@ -56,7 +57,7 @@ namespace WindowsFormsApp3
             // btnGolf
             // 
             this.btnGolf.Location = new System.Drawing.Point(532, 229);
-            this.btnGolf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGolf.Margin = new System.Windows.Forms.Padding(2);
             this.btnGolf.Name = "btnGolf";
             this.btnGolf.Size = new System.Drawing.Size(148, 43);
             this.btnGolf.TabIndex = 14;
@@ -66,7 +67,7 @@ namespace WindowsFormsApp3
             // btnClausura
             // 
             this.btnClausura.Location = new System.Drawing.Point(462, 393);
-            this.btnClausura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClausura.Margin = new System.Windows.Forms.Padding(2);
             this.btnClausura.Name = "btnClausura";
             this.btnClausura.Size = new System.Drawing.Size(148, 43);
             this.btnClausura.TabIndex = 13;
@@ -76,7 +77,7 @@ namespace WindowsFormsApp3
             // btnAmstel
             // 
             this.btnAmstel.Location = new System.Drawing.Point(684, 316);
-            this.btnAmstel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAmstel.Margin = new System.Windows.Forms.Padding(2);
             this.btnAmstel.Name = "btnAmstel";
             this.btnAmstel.Size = new System.Drawing.Size(148, 43);
             this.btnAmstel.TabIndex = 12;
@@ -86,7 +87,7 @@ namespace WindowsFormsApp3
             // btnKits
             // 
             this.btnKits.Location = new System.Drawing.Point(684, 229);
-            this.btnKits.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKits.Margin = new System.Windows.Forms.Padding(2);
             this.btnKits.Name = "btnKits";
             this.btnKits.Size = new System.Drawing.Size(148, 43);
             this.btnKits.TabIndex = 11;
@@ -96,7 +97,7 @@ namespace WindowsFormsApp3
             // btnAlimentos
             // 
             this.btnAlimentos.Location = new System.Drawing.Point(328, 229);
-            this.btnAlimentos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAlimentos.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlimentos.Name = "btnAlimentos";
             this.btnAlimentos.Size = new System.Drawing.Size(148, 43);
             this.btnAlimentos.TabIndex = 9;
@@ -106,7 +107,7 @@ namespace WindowsFormsApp3
             // btnTenis
             // 
             this.btnTenis.Location = new System.Drawing.Point(340, 297);
-            this.btnTenis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTenis.Margin = new System.Windows.Forms.Padding(2);
             this.btnTenis.Name = "btnTenis";
             this.btnTenis.Size = new System.Drawing.Size(148, 43);
             this.btnTenis.TabIndex = 8;
@@ -148,11 +149,22 @@ namespace WindowsFormsApp3
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(328, 104);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(112, 100);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 533);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -163,7 +175,7 @@ namespace WindowsFormsApp3
             this.Controls.Add(this.btnKits);
             this.Controls.Add(this.btnAlimentos);
             this.Controls.Add(this.btnTenis);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Menu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);
@@ -186,5 +198,6 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

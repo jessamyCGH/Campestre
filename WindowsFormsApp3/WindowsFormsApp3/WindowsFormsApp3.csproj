@@ -34,6 +34,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>clubcampestre.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
       <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
@@ -145,13 +149,16 @@
     <None Include="Resource\cerveza.png" />
     <None Include="Resource\Apertura.png" />
     <None Include="Resource\Clausura.png" />
+    <Content Include="clubcampestre.ico" />
     <Content Include="Resource\confi.png" />
     <None Include="Resource\golf.png" />
+    <None Include="Resource\false.png" />
     <Content Include="Resource\huella.png" />
     <Content Include="Resource\justifi2.png" />
     <Content Include="Resource\pagos.png" />
     <Content Include="Resource\personal.png" />
     <None Include="Resource\tennis.png" />
+    <None Include="Resource\true.png" />
     <Content Include="Resource\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
