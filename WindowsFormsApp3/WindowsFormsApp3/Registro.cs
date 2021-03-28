@@ -47,29 +47,15 @@ namespace WindowsFormsApp3
                 }
             }
 
-<<<<<<< Updated upstream
-=======
+
             cmbGolf.Items.AddRange(TipoGolf.ToArray());
             cmbTenis.Items.AddRange(TipoTenis.ToArray());
-        }
-
-
-
->>>>>>> Stashed changes
-
-        }
+                }
         private void BtnRegistar_Click(object sender, EventArgs e)
         {
 
             MessageBox.Show(DateTime.Now + " ");
-<<<<<<< Updated upstream
         }
-=======
-
-        }
-
-
->>>>>>> Stashed changes
         private void btnRegistar_Click_1(object sender, EventArgs e)
         {
 
@@ -123,11 +109,7 @@ namespace WindowsFormsApp3
             {
                 MessageBox.Show("El nombre ingresado es incorrecto");
             }
-<<<<<<< Updated upstream
-=======
 
-
->>>>>>> Stashed changes
         }
 
 
@@ -140,10 +122,6 @@ namespace WindowsFormsApp3
                 cmbGolf.Enabled = false;
                 usuario.CategoriaDescripcion = chkTenis.Text;
                 chkGolf.Checked = false;
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
             }
         }
 
@@ -165,12 +143,7 @@ namespace WindowsFormsApp3
             videoCapture1.Audio_CaptureDevice = videoCapture1.Audio_CaptureDevicesInfo[0].Name;
             videoCapture1.Mode = VisioForge.Types.VFVideoCaptureMode.VideoPreview;
             videoCapture1.Start();
-<<<<<<< Updated upstream
-=======
 
-
-            // conectarBDT.Close();
->>>>>>> Stashed changes
         }
     }
     
