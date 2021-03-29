@@ -5,7 +5,11 @@ namespace WindowsFormsApp3
 {
     public partial class Check : Form
     {
-        public Check()
+        //La variable menuAnterior guardara el menu el cual pasamos para llegar a esta pantalla
+        Menu menuAnterior;
+
+        //El valor menu sera el form anterior
+        public Check(Menu menu)
         {
             InitializeComponent();
             
@@ -13,6 +17,16 @@ namespace WindowsFormsApp3
             this.CenterToScreen();
             //Ocultamos el boton con el cual se registrara una entrega
             btnEntregado.Visible = false;
+            //menuAnterior guarda el menu el cual pasamos para llegar a esta pantalla
+            menuAnterior = menu;
+            //Creamos el evento de cierre del Form
+            this.FormClosing += Check_FormClosing;
+        }
+
+        private void Check_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Mostramos el menu que anteriormente pasamos
+            menuAnterior.Visible = true;
         }
 
         private void btnInaguracion_Click(object sender, EventArgs e)
@@ -56,5 +70,6 @@ namespace WindowsFormsApp3
             //Intercambiamos el texto del titulo por el texto del boton btnClausura
             lblTitulo.Text = btnClausura.Text;
         }
+
     }
 }

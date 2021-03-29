@@ -26,7 +26,7 @@ namespace WindowsFormsApp3
         {
             this.Visible = false;
             //Creamos un objeto del Form check para despues modificar sus propiedades
-            Check check = new Check();
+            Check check = new Check(this);
             //Al objeto anterior le damos un titulo
             check.Text = "Menu";
             //Un tipo de borde para el objeto check
