@@ -39,5 +39,10 @@ namespace WindowsFormsApp3
             //Mostramos el Form check
             check.Show();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
