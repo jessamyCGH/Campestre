@@ -15,6 +15,7 @@ namespace WindowsFormsApp3
         public Menu()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void Menu_Load(object sender, EventArgs e)
@@ -43,6 +44,24 @@ namespace WindowsFormsApp3
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            //Creamos un objeto del Form check para despues modificar sus propiedades
+            Registro registro = new Registro(this);
+            //Al objeto anterior le damos un titulo
+            registro.Text = "Menu";
+            //Un tipo de borde para el objeto check
+            registro.FormBorderStyle = FormBorderStyle.FixedDialog;
+            //Le removemos el boton de minimizar al objeto check
+            registro.MinimizeBox = false;
+            //Le removemos el boton de maximizar al objeto check
+            registro.MaximizeBox = false;
+
+            //Mostramos el Form check
+            registro.Show();
         }
     }
 }

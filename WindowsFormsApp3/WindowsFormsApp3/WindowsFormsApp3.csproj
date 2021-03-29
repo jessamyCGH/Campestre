@@ -150,6 +150,7 @@
     <None Include="Resource\Apertura.png" />
     <None Include="Resource\Clausura.png" />
     <Content Include="clubcampestre.ico" />
+    <None Include="Resource\checkout.png" />
     <Content Include="Resource\confi.png" />
     <None Include="Resource\golf.png" />
     <None Include="Resource\false.png" />
@@ -159,6 +160,7 @@
     <Content Include="Resource\personal.png" />
     <None Include="Resource\tennis.png" />
     <None Include="Resource\true.png" />
+    <None Include="Resource\Registro.png" />
     <Content Include="Resource\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -24,13 +24,18 @@ namespace WindowsFormsApp3
         ObservableCollection<string> TipoGolf = new ObservableCollection<string>();
         ObservableCollection<string> TipoTenis = new ObservableCollection<string>();
 
+        Menu MenuAnterior;
 
-
-        public Registro()
+        public Registro( Menu menu)
         {
+
             InitializeComponent();
 
+            this.CenterToScreen();
             SqlDataReader reader = conexion.obtenerCategorias();
+
+            MenuAnterior = menu;
+            this.FormClosing += Registro_FormClosing;
 
             while (reader.Read())
             {
@@ -51,6 +56,12 @@ namespace WindowsFormsApp3
             cmbGolf.Items.AddRange(TipoGolf.ToArray());
             cmbTenis.Items.AddRange(TipoTenis.ToArray());
                 }
+
+        private void Registro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MenuAnterior.Visible = true;
+        }
+
         private void BtnRegistar_Click(object sender, EventArgs e)
         {
 
