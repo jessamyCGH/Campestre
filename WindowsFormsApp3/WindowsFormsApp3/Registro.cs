@@ -150,6 +150,11 @@ namespace WindowsFormsApp3
         {
            
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }
