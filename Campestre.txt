@@ -1,0 +1,29 @@
+ CRYSTAL REPORTS
+Para el reporte de alimentos nos interesa los datos de 
+*Nombre                     *Club
+*Categoria                   *Fecha
+*No de registros del dia   *Lugar 
+Dia del evento 
+
+
+Amstel 
+El cliente puede ir varias veces por cerveza,
+generando un ticket
+Datos del Ticket:
+Amstel 
+Nombre del Lugar 
+Nombre dle socio 
+Categoria a la que pertenece 
+
+La cerveza no genera ningun reporte 
+Solo los alimentos generar un reporte las demas amenidades no 
+
+Alimentos y cerveza 
+generan ticket T O F 0 O 1
+
+
+BD son 11 tablas de las cuales solo nos sirven 9 
+
+
+cuando la persona recoga sus alimentos nos va a imprimir un ticket
+
