@@ -35,6 +35,7 @@ namespace WindowsFormsApp3
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnChk = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,18 +43,20 @@ namespace WindowsFormsApp3
             // 
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(5, 1);
+            this.panel1.Location = new System.Drawing.Point(7, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(619, 84);
+            this.panel1.Size = new System.Drawing.Size(1245, 103);
             this.panel1.TabIndex = 16;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(164, 19);
+            this.label2.Location = new System.Drawing.Point(483, 26);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(317, 29);
+            this.label2.Size = new System.Drawing.Size(254, 25);
             this.label2.TabIndex = 18;
             this.label2.Text = "Torneo Anual Campestre";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -61,18 +64,20 @@ namespace WindowsFormsApp3
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(0, 66);
+            this.panel2.Location = new System.Drawing.Point(0, 81);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1052, 18);
+            this.panel2.Size = new System.Drawing.Size(1403, 22);
             this.panel2.TabIndex = 17;
             // 
             // btnChk
             // 
             this.btnChk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChk.Image = global::WindowsFormsApp3.Properties.Resources.checkout;
-            this.btnChk.Location = new System.Drawing.Point(318, 91);
+            this.btnChk.Location = new System.Drawing.Point(426, 102);
+            this.btnChk.Margin = new System.Windows.Forms.Padding(4);
             this.btnChk.Name = "btnChk";
-            this.btnChk.Size = new System.Drawing.Size(306, 289);
+            this.btnChk.Size = new System.Drawing.Size(408, 356);
             this.btnChk.TabIndex = 19;
             this.btnChk.Text = "CheckOut";
             this.btnChk.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -83,25 +88,41 @@ namespace WindowsFormsApp3
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::WindowsFormsApp3.Properties.Resources.Registro;
-            this.button1.Location = new System.Drawing.Point(5, 91);
+            this.button1.Location = new System.Drawing.Point(7, 103);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(316, 289);
+            this.button1.Size = new System.Drawing.Size(421, 356);
             this.button1.TabIndex = 18;
             this.button1.Text = "Registar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::WindowsFormsApp3.Properties.Resources.Registro;
+            this.button2.Location = new System.Drawing.Point(831, 102);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(421, 356);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Modificar/Eliminar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 379);
+            this.ClientSize = new System.Drawing.Size(1253, 459);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnChk);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Menu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);
@@ -117,5 +138,6 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnChk;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
     }
 }

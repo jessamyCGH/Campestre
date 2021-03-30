@@ -175,11 +175,17 @@ namespace WindowsFormsApp3
             txtCorreo.Text = "";
             txtClub.Text = "";
             txtCelular.Text = "";
+                
             cmbGolf.Text = "";
             cmbGolf.Enabled = false;
             cmbTenis.Text = "";
-            chkGolf.Checked = false;
-            chkTenis.Checked = false;
+            cmbTenis.Enabled = false;
+
+
+            
+
+
+
            
 
         }

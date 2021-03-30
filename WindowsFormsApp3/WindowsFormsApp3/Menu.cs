@@ -63,5 +63,12 @@ namespace WindowsFormsApp3
             //Mostramos el Form check
             registro.Show();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Nodificar modificar = new Nodificar();
+            modificar.Show();
+
+        }
     }
 }
