@@ -12,11 +12,14 @@ using System.Data.SqlClient;
 using System.Collections.ObjectModel;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using DarrenLee.Media;
 
 namespace WindowsFormsApp3
 {
     public partial class Registro : Form
     {
+        Camera camara = new Camera();
+
         Usuario usuario = new Usuario();
         Conexion conexion = new Conexion();
 
@@ -24,6 +27,8 @@ namespace WindowsFormsApp3
         ObservableCollection<string> TipoGolf = new ObservableCollection<string>();
         ObservableCollection<string> TipoTenis = new ObservableCollection<string>();
 
+
+        SqlConnection con = new SqlConnection(@"Data Source= DESKTOP-JH5TK9P;Initial Catalog=PRUEBA; Integrated Security= True");
         Menu MenuAnterior;
 
         public Registro( Menu menu)
@@ -31,6 +36,14 @@ namespace WindowsFormsApp3
 
             InitializeComponent();
 
+           
+            //-------------------------------------------------------------------------
+            //CAMARA
+            GetInfo();
+            camara.OnFrameArrived += camara_onFArameArrived;
+
+
+           // ------------------------------------------------------------------------------
             this.CenterToScreen();
             SqlDataReader reader = conexion.obtenerCategorias();
 
@@ -57,6 +70,29 @@ namespace WindowsFormsApp3
             cmbTenis.Items.AddRange(TipoTenis.ToArray());
                 }
 
+        //-------------------------------------------------------------------------------------------
+        //Metodo para la camara 
+        private void camara_onFArameArrived(object source, FrameArrivedEventArgs e)
+        {
+            Image img = e.GetFrame();
+            pictureBox1.Image = img;
+
+        }
+
+        //--------------------------------------------------------------------------------------------
+
+        //--------------------------------------------------------------------------------------------
+        private void GetInfo()
+        {
+            var camaraDevices = camara.GetCameraSources();
+            var cameraResolution = camara.GetSupportedResolutions();
+
+        }
+
+
+        //--------------------------------------------------------------------------------------------
+         
+
         private void Registro_FormClosing(object sender, FormClosingEventArgs e)
         {
             MenuAnterior.Visible = true;
@@ -69,8 +105,11 @@ namespace WindowsFormsApp3
         }
         private void btnRegistar_Click_1(object sender, EventArgs e)
         {
-
-
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "insert INTO dbo.Usuario VALUES ('" + txtNombre.Text + "', '" + txtClub.Text + "', '" + txtCelular.Text + "',  '" + txtCorreo.Text + "', '" + txtPaterno.Text + "', '" + txtMaterno.Text + "' )";
+           
             if (!string.IsNullOrEmpty(txtNombre.Text))
             {
                 usuario.Nombre = txtNombre.Text;
@@ -121,6 +160,12 @@ namespace WindowsFormsApp3
                 MessageBox.Show("El nombre ingresado es incorrecto");
             }
 
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            MessageBox.Show("Se actualizo corectamente");
+
+
         }
 
 
@@ -159,7 +204,8 @@ namespace WindowsFormsApp3
 
         private void btnCapturar_Click(object sender, EventArgs e)
         {
-           
+            string path = @"Campestre\Fotos";
+            videoCapture1.BackgroundImage.Save(path + @"\" + txtNombre.Text + ".jpg");
         }
 
         private void btnReporte_Click(object sender, EventArgs e)
@@ -187,6 +233,11 @@ namespace WindowsFormsApp3
 
 
            
+
+        }
+
+        private void videoCapture1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

@@ -66,7 +66,7 @@ namespace WindowsFormsApp3
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            Nodificar modificar = new Nodificar();
+            Modificar modificar = new Modificar();
             modificar.Show();
 
         }

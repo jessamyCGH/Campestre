@@ -45,7 +45,7 @@ namespace WindowsFormsApp3
             conectarBDT.ConnectionString = cadena;
             conectarBDT.Open();
 
-            SqlCommand command = new SqlCommand("Select * from dbo.Categoriaa", conectarBDT);
+            SqlCommand command = new SqlCommand("Select * from dbo.Categorias", conectarBDT);
 
             SqlDataReader reader = command.ExecuteReader();
             
@@ -57,29 +57,6 @@ namespace WindowsFormsApp3
            // conectarBDT.Close();
             return reader;
 
-        }
-
-        public SqlCommand Insertardatos()
-        {
-            conectarBDT.ConnectionString = cadena;
-            conectarBDT.Open();
-
-            SqlCommand command = new SqlCommand("INSERT INTO (@Nombre, @Apaterno, @Amaterno, @Club, @Celular, @Correo) VALUES (Nombre, Apaterno, Amaterno, Club, Celular, Correo)");
-            command.Parameters.AddWithValue("@Nombre", conectarBDT);
-            command.Parameters.AddWithValue("@Apaterno", conectarBDT); 
-            command.Parameters.AddWithValue("@Amaterno", conectarBDT);
-            command.Parameters.AddWithValue("@Club", conectarBDT);
-            command.Parameters.AddWithValue("@Celular", conectarBDT);
-            command.Parameters.AddWithValue("@Correo", conectarBDT);
-
-            return command;
-
-            
-
-
-        }
-        
-
-
+        }   
     }
 }

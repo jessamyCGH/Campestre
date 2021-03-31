@@ -33,8 +33,6 @@ namespace WindowsFormsApp3
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbltTitulo = new System.Windows.Forms.Label();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnCapturar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblGolf = new System.Windows.Forms.Label();
             this.cmbGolf = new System.Windows.Forms.ComboBox();
@@ -43,10 +41,7 @@ namespace WindowsFormsApp3
             this.chkGolf = new System.Windows.Forms.CheckBox();
             this.chkTenis = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.BtnRegistar = new System.Windows.Forms.Button();
-            this.btnHuella = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnCamara = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -63,8 +58,13 @@ namespace WindowsFormsApp3
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.videoCapture1 = new VisioForge.Controls.UI.WinForms.VideoCapture();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnCapturar = new System.Windows.Forms.Button();
+            this.BtnRegistar = new System.Windows.Forms.Button();
+            this.btnHuella = new System.Windows.Forms.Button();
+            this.btnCamara = new System.Windows.Forms.Button();
+            this.videoCapture1 = new VisioForge.Controls.UI.WinForms.VideoCapture();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -99,30 +99,6 @@ namespace WindowsFormsApp3
             this.lbltTitulo.Size = new System.Drawing.Size(196, 39);
             this.lbltTitulo.TabIndex = 0;
             this.lbltTitulo.Text = "REGISTRO";
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
-            this.btnLimpiar.Location = new System.Drawing.Point(808, 526);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(81, 80);
-            this.btnLimpiar.TabIndex = 60;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnCapturar
-            // 
-            this.btnCapturar.Image = ((System.Drawing.Image)(resources.GetObject("btnCapturar.Image")));
-            this.btnCapturar.Location = new System.Drawing.Point(841, 334);
-            this.btnCapturar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCapturar.Name = "btnCapturar";
-            this.btnCapturar.Size = new System.Drawing.Size(65, 48);
-            this.btnCapturar.TabIndex = 57;
-            this.btnCapturar.UseVisualStyleBackColor = true;
-            this.btnCapturar.Click += new System.EventHandler(this.btnCapturar_Click);
             // 
             // groupBox2
             // 
@@ -219,28 +195,6 @@ namespace WindowsFormsApp3
             this.label9.TabIndex = 1;
             this.label9.Text = "Categoria";
             // 
-            // BtnRegistar
-            // 
-            this.BtnRegistar.Image = ((System.Drawing.Image)(resources.GetObject("BtnRegistar.Image")));
-            this.BtnRegistar.Location = new System.Drawing.Point(895, 526);
-            this.BtnRegistar.Margin = new System.Windows.Forms.Padding(4);
-            this.BtnRegistar.Name = "BtnRegistar";
-            this.BtnRegistar.Size = new System.Drawing.Size(81, 78);
-            this.BtnRegistar.TabIndex = 55;
-            this.BtnRegistar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnRegistar.UseVisualStyleBackColor = true;
-            this.BtnRegistar.Click += new System.EventHandler(this.btnRegistar_Click_1);
-            // 
-            // btnHuella
-            // 
-            this.btnHuella.Image = ((System.Drawing.Image)(resources.GetObject("btnHuella.Image")));
-            this.btnHuella.Location = new System.Drawing.Point(719, 526);
-            this.btnHuella.Margin = new System.Windows.Forms.Padding(4);
-            this.btnHuella.Name = "btnHuella";
-            this.btnHuella.Size = new System.Drawing.Size(81, 80);
-            this.btnHuella.TabIndex = 54;
-            this.btnHuella.UseVisualStyleBackColor = true;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -251,17 +205,6 @@ namespace WindowsFormsApp3
             this.label8.Size = new System.Drawing.Size(53, 16);
             this.label8.TabIndex = 53;
             this.label8.Text = "Huella";
-            // 
-            // btnCamara
-            // 
-            this.btnCamara.Image = ((System.Drawing.Image)(resources.GetObject("btnCamara.Image")));
-            this.btnCamara.Location = new System.Drawing.Point(756, 334);
-            this.btnCamara.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCamara.Name = "btnCamara";
-            this.btnCamara.Size = new System.Drawing.Size(65, 48);
-            this.btnCamara.TabIndex = 52;
-            this.btnCamara.UseVisualStyleBackColor = true;
-            this.btnCamara.Click += new System.EventHandler(this.btnCamara_Click);
             // 
             // groupBox1
             // 
@@ -424,6 +367,72 @@ namespace WindowsFormsApp3
             this.label1.TabIndex = 39;
             this.label1.Text = "Nombre:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(808, 408);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 67);
+            this.pictureBox1.TabIndex = 63;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
+            this.btnLimpiar.Location = new System.Drawing.Point(808, 526);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(81, 80);
+            this.btnLimpiar.TabIndex = 60;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnCapturar
+            // 
+            this.btnCapturar.Image = ((System.Drawing.Image)(resources.GetObject("btnCapturar.Image")));
+            this.btnCapturar.Location = new System.Drawing.Point(841, 334);
+            this.btnCapturar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCapturar.Name = "btnCapturar";
+            this.btnCapturar.Size = new System.Drawing.Size(65, 48);
+            this.btnCapturar.TabIndex = 57;
+            this.btnCapturar.UseVisualStyleBackColor = true;
+            this.btnCapturar.Click += new System.EventHandler(this.btnCapturar_Click);
+            // 
+            // BtnRegistar
+            // 
+            this.BtnRegistar.Image = ((System.Drawing.Image)(resources.GetObject("BtnRegistar.Image")));
+            this.BtnRegistar.Location = new System.Drawing.Point(895, 526);
+            this.BtnRegistar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnRegistar.Name = "BtnRegistar";
+            this.BtnRegistar.Size = new System.Drawing.Size(81, 78);
+            this.BtnRegistar.TabIndex = 55;
+            this.BtnRegistar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnRegistar.UseVisualStyleBackColor = true;
+            this.BtnRegistar.Click += new System.EventHandler(this.btnRegistar_Click_1);
+            // 
+            // btnHuella
+            // 
+            this.btnHuella.Image = ((System.Drawing.Image)(resources.GetObject("btnHuella.Image")));
+            this.btnHuella.Location = new System.Drawing.Point(719, 526);
+            this.btnHuella.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHuella.Name = "btnHuella";
+            this.btnHuella.Size = new System.Drawing.Size(81, 80);
+            this.btnHuella.TabIndex = 54;
+            this.btnHuella.UseVisualStyleBackColor = true;
+            // 
+            // btnCamara
+            // 
+            this.btnCamara.Image = ((System.Drawing.Image)(resources.GetObject("btnCamara.Image")));
+            this.btnCamara.Location = new System.Drawing.Point(756, 334);
+            this.btnCamara.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCamara.Name = "btnCamara";
+            this.btnCamara.Size = new System.Drawing.Size(65, 48);
+            this.btnCamara.TabIndex = 52;
+            this.btnCamara.UseVisualStyleBackColor = true;
+            this.btnCamara.Click += new System.EventHandler(this.btnCamara_Click);
+            // 
             // videoCapture1
             // 
             this.videoCapture1.Additional_Audio_CaptureDevice_MixChannels = false;
@@ -472,8 +481,7 @@ namespace WindowsFormsApp3
             this.videoCapture1.DV_Decoder_Video_Resolution = VisioForge.Types.VFDVVideoResolution.Full;
             this.videoCapture1.Face_Tracking = null;
             this.videoCapture1.IP_Camera_Source = null;
-            this.videoCapture1.Location = new System.Drawing.Point(661, 78);
-            this.videoCapture1.Margin = new System.Windows.Forms.Padding(4);
+            this.videoCapture1.Location = new System.Drawing.Point(719, 105);
             this.videoCapture1.Mode = VisioForge.Types.VFVideoCaptureMode.VideoPreview;
             this.videoCapture1.Motion_Detection = null;
             this.videoCapture1.Motion_DetectionEx = null;
@@ -505,9 +513,9 @@ namespace WindowsFormsApp3
             this.videoCapture1.SeparateCapture_GMFMode = true;
             this.videoCapture1.SeparateCapture_Mode = VisioForge.Types.VFSeparateCaptureMode.Normal;
             this.videoCapture1.SeparateCapture_TimeThreshold = System.TimeSpan.Parse("00:00:00");
-            this.videoCapture1.Size = new System.Drawing.Size(315, 249);
+            this.videoCapture1.Size = new System.Drawing.Size(227, 215);
             this.videoCapture1.Start_DelayEnabled = false;
-            this.videoCapture1.TabIndex = 62;
+            this.videoCapture1.TabIndex = 64;
             this.videoCapture1.Tags = null;
             this.videoCapture1.Timeshift_Settings = null;
             this.videoCapture1.TVTuner_Channel = 0;
@@ -546,22 +554,13 @@ namespace WindowsFormsApp3
             this.videoCapture1.Virtual_Camera_Output_LicenseKey = null;
             this.videoCapture1.VLC_Path = null;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(808, 408);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 67);
-            this.pictureBox1.TabIndex = 63;
-            this.pictureBox1.TabStop = false;
-            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 617);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.videoCapture1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCapturar);
@@ -633,8 +632,8 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private VisioForge.Controls.UI.WinForms.VideoCapture videoCapture1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private VisioForge.Controls.UI.WinForms.VideoCapture videoCapture1;
     }
 }
 
