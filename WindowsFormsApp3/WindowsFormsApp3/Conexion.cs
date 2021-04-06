@@ -9,7 +9,7 @@ namespace WindowsFormsApp3
 {
     class Conexion
     {
-        string cadena = @"Data Source= {nombrePC};Initial Catalog=Torneo_Golf; Integrated Security= True";
+        string cadena = @"Data Source= DESKTOP-JH5TK9P;Initial Catalog=PRUEBA; Integrated Security= True";
         public SqlConnection conectarBDT = new SqlConnection();
 
         public Conexion()
@@ -57,6 +57,22 @@ namespace WindowsFormsApp3
            // conectarBDT.Close();
             return reader;
 
-        }   
+        }  
+        
+        public SqlDataReader Buscar ()
+        {
+          //  cadena = cadena.Replace("{NombrePC)", Environment.MachineName);
+            conectarBDT.ConnectionString = cadena;
+            conectarBDT.Open();
+
+            SqlCommand command = new SqlCommand("SELECT * from dbo.Usuario where Nombre = nombre", conectarBDT);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            return reader;
+
+               
+
+        }
     }
 }

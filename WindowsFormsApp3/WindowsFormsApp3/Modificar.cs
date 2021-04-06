@@ -14,9 +14,13 @@ namespace WindowsFormsApp3
     public partial class Modificar : Form
     {
         SqlConnection cadena = new SqlConnection(@"Data Source= DESKTOP-JH5TK9P;Initial Catalog=PRUEBA; Integrated Security= True");
+        Conexion conexion = new Conexion();
         public Modificar()
         {
             InitializeComponent();
+
+
+            
         }
 
         //--------------------------------------------------------------------------------------------------------
@@ -68,13 +72,31 @@ namespace WindowsFormsApp3
             cadena.Close();
             MessageBox.Show("Borrado Exitosamente");
         }
+        //--------------------------------------------------------------------------------------------------------------
+
+        //--------------------------------------------------------------------------------------------------------------
 
         private void btnBuscar_Click(object sender, EventArgs e)
+          
         {
+
             cadena.Open();
             SqlCommand cmd = cadena.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT * FROM dbo.Usuario where Nombre = ('"+ textBox1.Text +"')";
+            cmd.CommandText = "SELECT * from dbo.Usuario where Nombre = '" + TxtBuscar.Text + "'";
+            try
+            {
+                cmd.ExecuteNonQuery();
+                Console.WriteLine(cmd.CommandType);
+                cadena.Close();
+                MessageBox.Show("Busqueda exitosa");
+            }
+            catch
+            {
+                MessageBox.Show("No encontrado");
+            }
+
+
 
 
         }

@@ -22,6 +22,11 @@ namespace WindowsFormsApp3
 
         Usuario usuario = new Usuario();
         Conexion conexion = new Conexion();
+        private bool existenDispositivos = false;
+        private bool fotografiaHecha = false;
+        private FilterInfoCollection dispositivosDeVideo;
+        private VideoCaptureDevice fuenteDeVideo = null;
+        public PictureBox pbFotoSocio = null; 
 
 
         ObservableCollection<string> TipoGolf = new ObservableCollection<string>();
@@ -35,6 +40,7 @@ namespace WindowsFormsApp3
         {
 
             InitializeComponent();
+            BuscarDispositivos();
 
            
             //-------------------------------------------------------------------------
@@ -44,7 +50,12 @@ namespace WindowsFormsApp3
 
 
            // ------------------------------------------------------------------------------
+            //pantalla en el centro
             this.CenterToScreen();
+
+            //------------------------------------------------------------------------------
+            //SQLDATAREADER muestra la informacion de categorias tenis o golf
+            //------------------------------------------------------------------------------
             SqlDataReader reader = conexion.obtenerCategorias();
 
             MenuAnterior = menu;
@@ -69,6 +80,7 @@ namespace WindowsFormsApp3
             cmbGolf.Items.AddRange(TipoGolf.ToArray());
             cmbTenis.Items.AddRange(TipoTenis.ToArray());
                 }
+        //------------------------------------------------------------------------------------------
 
         //-------------------------------------------------------------------------------------------
         //Metodo para la camara 
@@ -169,6 +181,8 @@ namespace WindowsFormsApp3
         }
 
 
+        //--------------------------------------------------------------------------------------------
+        //Desahbilita/ hablita el chkTenis, dependiendo del evento recibido
 
         private void chkTenis_CheckedChanged(object sender, EventArgs e)
         {
@@ -180,7 +194,11 @@ namespace WindowsFormsApp3
                 chkGolf.Checked = false;
             }
         }
+        //--------------------------------------------------------------------------------------------
 
+
+        //--------------------------------------------------------------------------------------------
+        //Desahbilita/ habilita el chkTenis, dependiendo del evento recibido
         private void chkGolf_CheckedChanged(object sender, EventArgs e)
         {
             if (chkGolf.Checked)
@@ -191,22 +209,29 @@ namespace WindowsFormsApp3
                 chkTenis.Checked = false;
             }
         }
+        //-----------------------------------------------------------------------------------------------------
 
 
-        private void btnCamara_Click(object sender, EventArgs e)
+        private void btnCamara_Click(object sender, EventArgs eventArgs)
         {
-            videoCapture1.Video_CaptureDevice = videoCapture1.Video_CaptureDevicesInfo[0].Name;
-            videoCapture1.Audio_CaptureDevice = videoCapture1.Audio_CaptureDevicesInfo[0].Name;
-            videoCapture1.Mode = VisioForge.Types.VFVideoCaptureMode.VideoPreview;
-            videoCapture1.Start();
+            /*  vid.Video_CaptureDevice = videoCapture1.Video_CaptureDevicesInfo[0].Name;
+              videoCapture1.Audio_CaptureDevice = videoCapture1.Audio_CaptureDevicesInfo[0].Name;
+              videoCapture1.Mode = VisioForge.Types.VFVideoCaptureMode.VideoPreview;
+              videoCapture1.Start();*/
 
+            if (existenDispositivos)
+            {
+                fuenteDeVideo = new VideoCaptureDevice(dispositivosDeVideo[0].MonikerString);
+                fuenteDeVideo.NewFrame += new NewFrameEventHandler(MostrarImagen);
+                fuenteDeVideo.Start();
+            }
+            else
+            {
+                MessageBox.Show("No se encuentra ningún dispositivo de vídeo en el sistema", "Información", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Close();
+            }
         }
 
-        private void btnCapturar_Click(object sender, EventArgs e)
-        {
-            string path = @"Campestre\Fotos";
-            videoCapture1.BackgroundImage.Save(path + @"\" + txtNombre.Text + ".jpg");
-        }
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
@@ -236,7 +261,59 @@ namespace WindowsFormsApp3
 
         }
 
-        private void videoCapture1_Paint(object sender, PaintEventArgs e)
+
+        //---------------------------------------------------------------------------------------------------
+        // Boton Captura la fotografia 
+
+        private void btnCapturar_Click(object sender, EventArgs e)
+        {
+            Capturar();
+            fotografiaHecha = true;
+
+        }
+        //--------------------------------------------------------------------------------------------------
+
+
+
+        //------------------------------------------------------------------------------------------------
+        //Busca Si algun dispostivo esta conectado 
+        private void BuscarDispositivos()
+        {
+            dispositivosDeVideo = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+
+            if (dispositivosDeVideo.Count == 0)
+                existenDispositivos = false;
+            else
+                existenDispositivos = true;
+
+        }
+
+        //------------------------------------------------------------------------------------------------
+        //Metodo para captura la imagen 
+        private void Capturar()
+        {
+            if (fuenteDeVideo != null)
+            {
+                if (fuenteDeVideo.IsRunning)
+                {
+                    picFoto.Image = picFoto.Image;
+                   
+                }
+            }
+            if (fuenteDeVideo != null)
+                fuenteDeVideo.Stop();
+        }
+
+        //--------------------------------------------------------------------------------------------------
+
+        private void MostrarImagen(object sender, NewFrameEventArgs eventArgs)
+        {
+            Bitmap imagen = (Bitmap)eventArgs.Frame.Clone();
+            picFoto.Image = imagen;
+
+        }
+
+        private void Registro_Load(object sender, EventArgs e)
         {
 
         }

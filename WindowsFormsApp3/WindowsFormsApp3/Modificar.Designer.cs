@@ -67,9 +67,9 @@ namespace WindowsFormsApp3
             this.btnHuella = new System.Windows.Forms.Button();
             this.btnCamara = new System.Windows.Forms.Button();
             this.Buscar = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -125,8 +125,8 @@ namespace WindowsFormsApp3
             this.videoCapture1.DV_Decoder_Video_Resolution = VisioForge.Types.VFDVVideoResolution.Full;
             this.videoCapture1.Face_Tracking = null;
             this.videoCapture1.IP_Camera_Source = null;
-            this.videoCapture1.Location = new System.Drawing.Point(661, 77);
-            this.videoCapture1.Margin = new System.Windows.Forms.Padding(4);
+            this.videoCapture1.Location = new System.Drawing.Point(661, 78);
+            this.videoCapture1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.videoCapture1.Mode = VisioForge.Types.VFVideoCaptureMode.VideoPreview;
             this.videoCapture1.Motion_Detection = null;
             this.videoCapture1.Motion_DetectionEx = null;
@@ -222,7 +222,7 @@ namespace WindowsFormsApp3
             // 
             this.lbltTitulo.AutoSize = true;
             this.lbltTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltTitulo.Location = new System.Drawing.Point(307, 8);
+            this.lbltTitulo.Location = new System.Drawing.Point(307, 7);
             this.lbltTitulo.Name = "lbltTitulo";
             this.lbltTitulo.Size = new System.Drawing.Size(391, 39);
             this.lbltTitulo.TabIndex = 0;
@@ -238,9 +238,9 @@ namespace WindowsFormsApp3
             this.groupBox2.Controls.Add(this.chkTenis);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Location = new System.Drawing.Point(80, 374);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Size = new System.Drawing.Size(419, 199);
             this.groupBox2.TabIndex = 81;
             this.groupBox2.TabStop = false;
@@ -292,7 +292,7 @@ namespace WindowsFormsApp3
             // 
             this.chkGolf.AutoSize = true;
             this.chkGolf.Location = new System.Drawing.Point(179, 28);
-            this.chkGolf.Margin = new System.Windows.Forms.Padding(4);
+            this.chkGolf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkGolf.Name = "chkGolf";
             this.chkGolf.Size = new System.Drawing.Size(51, 20);
             this.chkGolf.TabIndex = 3;
@@ -303,7 +303,7 @@ namespace WindowsFormsApp3
             // 
             this.chkTenis.AutoSize = true;
             this.chkTenis.Location = new System.Drawing.Point(43, 28);
-            this.chkTenis.Margin = new System.Windows.Forms.Padding(4);
+            this.chkTenis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkTenis.Name = "chkTenis";
             this.chkTenis.Size = new System.Drawing.Size(61, 20);
             this.chkTenis.TabIndex = 2;
@@ -338,9 +338,9 @@ namespace WindowsFormsApp3
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(80, 409);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Size = new System.Drawing.Size(412, 134);
             this.groupBox1.TabIndex = 76;
             this.groupBox1.TabStop = false;
@@ -350,7 +350,7 @@ namespace WindowsFormsApp3
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(199, 23);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(93, 20);
             this.checkBox2.TabIndex = 3;
@@ -361,7 +361,7 @@ namespace WindowsFormsApp3
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(36, 23);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(93, 20);
             this.checkBox1.TabIndex = 2;
@@ -382,7 +382,7 @@ namespace WindowsFormsApp3
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(207, 314);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(332, 22);
             this.txtCorreo.TabIndex = 75;
@@ -390,39 +390,39 @@ namespace WindowsFormsApp3
             // txtCelular
             // 
             this.txtCelular.Location = new System.Drawing.Point(207, 278);
-            this.txtCelular.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCelular.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(332, 22);
             this.txtCelular.TabIndex = 74;
             // 
             // txtClub
             // 
-            this.txtClub.Location = new System.Drawing.Point(207, 248);
-            this.txtClub.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClub.Location = new System.Drawing.Point(207, 249);
+            this.txtClub.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtClub.Name = "txtClub";
             this.txtClub.Size = new System.Drawing.Size(332, 22);
             this.txtClub.TabIndex = 73;
             // 
             // txtMaterno
             // 
-            this.txtMaterno.Location = new System.Drawing.Point(207, 216);
-            this.txtMaterno.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaterno.Location = new System.Drawing.Point(207, 217);
+            this.txtMaterno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaterno.Name = "txtMaterno";
             this.txtMaterno.Size = new System.Drawing.Size(332, 22);
             this.txtMaterno.TabIndex = 72;
             // 
             // txtPaterno
             // 
-            this.txtPaterno.Location = new System.Drawing.Point(207, 184);
-            this.txtPaterno.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPaterno.Location = new System.Drawing.Point(207, 185);
+            this.txtPaterno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPaterno.Name = "txtPaterno";
             this.txtPaterno.Size = new System.Drawing.Size(332, 22);
             this.txtPaterno.TabIndex = 71;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(207, 152);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Location = new System.Drawing.Point(207, 153);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(332, 22);
             this.txtNombre.TabIndex = 70;
@@ -496,8 +496,8 @@ namespace WindowsFormsApp3
             // button1
             // 
             this.button1.Image = global::WindowsFormsApp3.Properties.Resources.delete;
-            this.button1.Location = new System.Drawing.Point(719, 525);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(719, 526);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 80);
             this.button1.TabIndex = 87;
@@ -508,16 +508,17 @@ namespace WindowsFormsApp3
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(808, 407);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 67);
+            this.pictureBox1.Size = new System.Drawing.Size(65, 66);
             this.pictureBox1.TabIndex = 86;
             this.pictureBox1.TabStop = false;
             // 
             // btnLimpiar
             // 
             this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
-            this.btnLimpiar.Location = new System.Drawing.Point(808, 525);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpiar.Location = new System.Drawing.Point(808, 526);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(81, 80);
             this.btnLimpiar.TabIndex = 83;
@@ -529,8 +530,8 @@ namespace WindowsFormsApp3
             // btnCapturar
             // 
             this.btnCapturar.Image = ((System.Drawing.Image)(resources.GetObject("btnCapturar.Image")));
-            this.btnCapturar.Location = new System.Drawing.Point(841, 333);
-            this.btnCapturar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCapturar.Location = new System.Drawing.Point(841, 334);
+            this.btnCapturar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCapturar.Name = "btnCapturar";
             this.btnCapturar.Size = new System.Drawing.Size(65, 48);
             this.btnCapturar.TabIndex = 82;
@@ -539,8 +540,8 @@ namespace WindowsFormsApp3
             // BtnModificar
             // 
             this.BtnModificar.Image = ((System.Drawing.Image)(resources.GetObject("BtnModificar.Image")));
-            this.BtnModificar.Location = new System.Drawing.Point(895, 525);
-            this.BtnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnModificar.Location = new System.Drawing.Point(895, 526);
+            this.BtnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(81, 78);
             this.BtnModificar.TabIndex = 80;
@@ -551,8 +552,8 @@ namespace WindowsFormsApp3
             // btnHuella
             // 
             this.btnHuella.Image = ((System.Drawing.Image)(resources.GetObject("btnHuella.Image")));
-            this.btnHuella.Location = new System.Drawing.Point(628, 525);
-            this.btnHuella.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHuella.Location = new System.Drawing.Point(628, 526);
+            this.btnHuella.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHuella.Name = "btnHuella";
             this.btnHuella.Size = new System.Drawing.Size(81, 80);
             this.btnHuella.TabIndex = 79;
@@ -561,8 +562,8 @@ namespace WindowsFormsApp3
             // btnCamara
             // 
             this.btnCamara.Image = ((System.Drawing.Image)(resources.GetObject("btnCamara.Image")));
-            this.btnCamara.Location = new System.Drawing.Point(756, 333);
-            this.btnCamara.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCamara.Location = new System.Drawing.Point(756, 334);
+            this.btnCamara.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCamara.Name = "btnCamara";
             this.btnCamara.Size = new System.Drawing.Size(65, 48);
             this.btnCamara.TabIndex = 77;
@@ -572,42 +573,46 @@ namespace WindowsFormsApp3
             // 
             this.Buscar.Controls.Add(this.btnBuscar);
             this.Buscar.Controls.Add(this.label10);
-            this.Buscar.Controls.Add(this.textBox1);
+            this.Buscar.Controls.Add(this.TxtBuscar);
             this.Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Buscar.Location = new System.Drawing.Point(90, 77);
+            this.Buscar.Location = new System.Drawing.Point(62, 78);
+            this.Buscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(553, 56);
+            this.Buscar.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Buscar.Size = new System.Drawing.Size(582, 57);
             this.Buscar.TabIndex = 88;
             this.Buscar.TabStop = false;
             this.Buscar.Text = "Buscar";
             // 
-            // textBox1
+            // btnBuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(82, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(332, 22);
-            this.textBox1.TabIndex = 0;
+            this.btnBuscar.Location = new System.Drawing.Point(436, 18);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(95, 27);
+            this.btnBuscar.TabIndex = 90;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(8, 22);
+            this.label10.Location = new System.Drawing.Point(9, 21);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 16);
             this.label10.TabIndex = 89;
             this.label10.Text = "Nombre:";
             // 
-            // btnBuscar
+            // TxtBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(436, 18);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 90;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.TxtBuscar.Location = new System.Drawing.Point(83, 18);
+            this.TxtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtBuscar.Name = "TxtBuscar";
+            this.TxtBuscar.Size = new System.Drawing.Size(332, 22);
+            this.TxtBuscar.TabIndex = 0;
             // 
             // Modificar
             // 
@@ -639,6 +644,7 @@ namespace WindowsFormsApp3
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Modificar";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -696,6 +702,6 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.GroupBox Buscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtBuscar;
     }
 }
