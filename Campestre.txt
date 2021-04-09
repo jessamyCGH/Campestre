@@ -27,3 +27,110 @@ BD son 11 tablas de las cuales solo nos sirven 9
 
 cuando la persona recoga sus alimentos nos va a imprimir un ticket
 
+
+
+CREATE DATABASE TORNEOANUAL;
+USE TORNEOANUAL;
+
+CREATE TABLE [Usuarios] (
+  [id] int PRIMARY KEY NOT NULL,
+  [nombre] varchar(40) NOT NULL,
+  [apellidoP] varchar(25) NOT NULL,
+  [apellidoM] varchar(25) NOT NULL,
+  [correo] varchar(25) NOT NULL,
+  [tel] varchar(10) NOT NULL,
+  [club] nvarchar(255) NOT NULL,
+  [id_cat] int,
+  [huella] nvarchar(255),
+  [imagen] image,
+  [id_torneo] int NOT NULL,
+  [fecha_registro] datetime NOT NULL
+)
+GO
+
+CREATE TABLE [Torneo] (
+  [id_torneo] int PRIMARY KEY NOT NULL,
+  [fecha_inicio] nvarchar(255) NOT NULL,
+  [fecha_fin] nvarchar(255) NOT NULL,
+  [lugar_sede] nvarchar(255) NOT NULL,
+  [descripcion] nvarchar(255) NOT NULL
+)
+GO
+
+CREATE TABLE [Categoria] (
+  [id_cat] int PRIMARY KEY NOT NULL,
+  [descripcion] varchar(25) NOT NULL,
+  [tipo] char(1) NOT NULL
+)
+GO
+
+CREATE TABLE [Inaguracion] (
+  [id_user] int PRIMARY KEY NOT NULL,
+  [fecha] datetime NOT NULL
+)
+GO
+
+CREATE TABLE [Alimentos] (
+  [id_user] int PRIMARY KEY NOT NULL,
+  [fecha] datetime NOT NULL
+)
+GO
+
+CREATE TABLE [Cerveza] (
+  [id_user] int PRIMARY KEY NOT NULL,
+  [countCervezas] int NOT NULL,
+  [fecha] datetime NOT NULL
+)
+GO
+
+CREATE TABLE [Tennis] (
+  [id_user] int PRIMARY KEY NOT NULL,
+  [fecha] datetime NOT NULL
+)
+GO
+
+CREATE TABLE [Golf] (
+  [id_user] int PRIMARY KEY NOT NULL,
+  [fecha] datetime NOT NULL
+)
+GO
+
+CREATE TABLE [Concierto] (
+  [id_user] int PRIMARY KEY NOT NULL,
+  [fecha] datetime NOT NULL
+)
+GO
+
+CREATE TABLE [Clausura] (
+  [id_user] int PRIMARY KEY NOT NULL,
+  [fecha] datetime NOT NULL
+)
+GO
+
+ALTER TABLE [Categoria] ADD FOREIGN KEY ([id_cat]) REFERENCES [Usuarios] ([id_cat])
+GO
+
+ALTER TABLE [Torneo] ADD FOREIGN KEY ([id_torneo]) REFERENCES [Usuarios] ([id_torneo])
+GO
+
+ALTER TABLE [Inaguracion] ADD FOREIGN KEY ([id_user]) REFERENCES [Usuarios] ([id])
+GO
+
+ALTER TABLE [Alimentos] ADD FOREIGN KEY ([id_user]) REFERENCES [Usuarios] ([id])
+GO
+
+ALTER TABLE [Cerveza] ADD FOREIGN KEY ([id_user]) REFERENCES [Usuarios] ([id])
+GO
+
+ALTER TABLE [Tennis] ADD FOREIGN KEY ([id_user]) REFERENCES [Usuarios] ([id])
+GO
+
+ALTER TABLE [Golf] ADD FOREIGN KEY ([id_user]) REFERENCES [Usuarios] ([id])
+GO
+
+ALTER TABLE [Concierto] ADD FOREIGN KEY ([id_user]) REFERENCES [Usuarios] ([id])
+GO
+
+ALTER TABLE [Clausura] ADD FOREIGN KEY ([id_user]) REFERENCES [Usuarios] ([id])
+GO
+
