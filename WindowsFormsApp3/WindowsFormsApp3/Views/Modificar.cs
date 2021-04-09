@@ -17,7 +17,7 @@ namespace WindowsFormsApp3
     public partial class Modificar : Form
     {
         
-        SqlConnection cadena = new SqlConnection(@"Data Source= DESKTOP-JH5TK9P;Initial Catalog=PRUEBA; Integrated Security= True");
+     
         Conexion conexion = new Conexion();
        
 
@@ -32,9 +32,9 @@ namespace WindowsFormsApp3
             BuscarDispositivos();
         }
 
-        //--------------------------------------------------------------------------------------------------------
+        
         //Limpia los campos de texto despues de hacer una consulta
-        //--------------------------------------------------------------------------------------------------------
+        
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -50,13 +50,13 @@ namespace WindowsFormsApp3
             cmbGolf.Enabled = false;
         }
 
-        //--------------------------------------------------------------------------------------------------------
+        
         //Actualiza los datos de la BD USUARIOS
-        //--------------------------------------------------------------------------------------------------------
+       
         private void BtnModificar_Click(object sender, EventArgs e)
         {
 
-            cadena.Open();
+         /*   cadena.Open();
            
          
             SqlCommand cmd = cadena.CreateCommand();
@@ -68,29 +68,24 @@ namespace WindowsFormsApp3
             
             cadena.Close();
 
-            MessageBox.Show("Se actualizo corectamente");
+            MessageBox.Show("Se actualizo corectamente");*/
         }
 
-        //--------------------------------------------------------------------------------------------------------
+       
         //Borra los registros de la tabla 
-        //--------------------------------------------------------------------------------------------------------
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             
-            cadena.Open();
+            /*cadena.Open();
            
             SqlCommand cmd = cadena.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "delete from dbo.Usuario where Nombre = '" + txtNombre.Text + "'";
             cmd.ExecuteNonQuery();
             cadena.Close();
-            MessageBox.Show("Borrado Exitosamente");
+            MessageBox.Show("Borrado Exitosamente");*/
         }
-        //--------------------------------------------------------------------------------------------------------------
 
-        //--------------------------------------------------------------------------------------------------------------
-
-        
 
 
         private void btnCamara_Click(object sender, EventArgs e)
@@ -109,20 +104,15 @@ namespace WindowsFormsApp3
             }
         }
 
-        //---------------------------------------------------------------------------------------------------
+   
         // Boton Captura la fotografia 
-
         private void btnCapturar_Click(object sender, EventArgs e)
         {
             Capturar();
             fotografiaHecha = true;
 
         }
-        //--------------------------------------------------------------------------------------------------
-
-
-
-        //---------------------------------------------------------------------------------------------------
+  
         //Busca Si algun dispostivo esta conectado 
         private void BuscarDispositivos()
         {
@@ -134,9 +124,7 @@ namespace WindowsFormsApp3
                 existenDispositivos = true;
 
         }
-        //---------------------------------------------------------------------------------------------------
 
-        //---------------------------------------------------------------------------------------------------
         //Metodo para captura la imagen 
         private void Capturar()
         {
@@ -152,11 +140,8 @@ namespace WindowsFormsApp3
                 fuenteDeVideo.Stop();
         }
 
-        //----------------------------------------------------------------------------------------------------
-
-        //-----------------------------------------------------------------------------------------------------
+      
         //Se muestra la imagen en el pictureBox
-
         private void MostrarImagen(object sender, NewFrameEventArgs eventArgs)
         {
             Bitmap imagen = (Bitmap)eventArgs.Frame.Clone();
@@ -171,10 +156,10 @@ namespace WindowsFormsApp3
 
         }
 
-        //------------------------------------------------------------------------------------------------------
+      
 
 
-        public void Info ()
+       /* public void Info ()
         {
             cadena.Open();
             SqlCommand cmd = cadena.CreateCommand();
@@ -185,83 +170,23 @@ namespace WindowsFormsApp3
             Console.WriteLine(cmd);
             cadena.Close();
            // MessageBox.Show("Borrado Exitosamente");
-        }
+        }*/
 
 
 
-        //-------------------------------------------------------------------------------------------------------------------------------------
-        //Metodo para buscar en el registro 
-        //-------------------------------------------------------------------------------------------------------------------------------------
-        public void Buscar()
-        {
-            {
-                cadena.Open();
-                string bus = TxtBuscar.Text;
-                SqlDataReader reader = null;
 
-
-                string sql = "SELECT Nombre, Club, Celular, Correo, Paterno, Materno from dbo.Usuario where Nombre like '" + bus + "' ";
-                cadena.Open();
-
-                try
-                {
-                    SqlCommand command = new SqlCommand(sql, cadena);
-                    reader = command.ExecuteReader();
-
-
-                    while (reader.Read())
-
-                    {
-                        txtNombre.Text = reader.GetString(1);
-                        txtClub.Text = reader.GetString(2);
-                        txtCelular.Text = reader.GetString(3);
-                        txtCorreo.Text = reader.GetString(4);
-                        txtPaterno.Text = reader.GetString(5);
-                        txtMaterno.Text = reader.GetString(6);
-                    }
-
-
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("error al buscar", ex.Message);
-                }
-                finally
-                {
-                    cadena.Close();
-                }
-
-            }
-        }
 
         private void btnBusca_Click(object sender, EventArgs e)
         {
-            SqlDataReader reader = conexion.buscar(txtbus.Text);
-            try
-            {
-                while (reader.Read())
-
-                {
-                    txtNombre.Text = reader.GetString(1);
-                    txtClub.Text = reader.GetString(2);
-                    txtCelular.Text = reader.GetString(3);
-                    txtCorreo.Text = reader.GetString(4);
-                    txtPaterno.Text = reader.GetString(5);
-                    txtMaterno.Text = reader.GetString(6);
-                }
-            }
-
-            catch (SqlException ex)
-            {
-                MessageBox.Show("error al buscar", ex.Message);
-            }
-            finally
-            {
-                cadena.Close();
-            }
+          
 
         }
-        //------------------------------------------------------------------------------------------------------------------------------------------
+
+        private void btnHuella_Click(object sender, EventArgs e)
+        {
+
+        }
+       
     }
 
 }

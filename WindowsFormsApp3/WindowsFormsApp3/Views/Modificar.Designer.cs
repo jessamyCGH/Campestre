@@ -438,6 +438,7 @@ namespace WindowsFormsApp3
             this.btnHuella.Size = new System.Drawing.Size(81, 80);
             this.btnHuella.TabIndex = 79;
             this.btnHuella.UseVisualStyleBackColor = true;
+            this.btnHuella.Click += new System.EventHandler(this.btnHuella_Click);
             // 
             // btnCamara
             // 
