@@ -94,7 +94,7 @@ namespace WindowsFormsApp3
             // 
             this.lblEntregado.AutoSize = true;
             this.lblEntregado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntregado.Location = new System.Drawing.Point(634, 223);
+            this.lblEntregado.Location = new System.Drawing.Point(644, 225);
             this.lblEntregado.Name = "lblEntregado";
             this.lblEntregado.Size = new System.Drawing.Size(218, 25);
             this.lblEntregado.TabIndex = 12;
@@ -108,6 +108,7 @@ namespace WindowsFormsApp3
             this.btnEntregado.Size = new System.Drawing.Size(214, 23);
             this.btnEntregado.TabIndex = 15;
             this.btnEntregado.UseVisualStyleBackColor = true;
+            this.btnEntregado.Click += new System.EventHandler(this.btnEntregado_Click);
             // 
             // groupBox1
             // 
