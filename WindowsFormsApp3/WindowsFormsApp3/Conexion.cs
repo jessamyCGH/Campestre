@@ -59,20 +59,21 @@ namespace WindowsFormsApp3
 
         }  
         
-        public SqlDataReader Buscar ()
+       
+        public SqlDataReader buscar(string Nombrer)
         {
-          //  cadena = cadena.Replace("{NombrePC)", Environment.MachineName);
-            conectarBDT.ConnectionString = cadena;
-            conectarBDT.Open();
+            {
+                cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
+                conectarBDT.ConnectionString = cadena;
+                conectarBDT.Open();
+                SqlCommand command = new SqlCommand("SELECT Nombre, Club, Celular, Correo, Paterno, Materno from dbo.Usuario where Nombre like", conectarBDT);
 
-            SqlCommand command = new SqlCommand("SELECT * from dbo.Usuario where Nombre = nombre", conectarBDT);
+                SqlDataReader reader = command.ExecuteReader();
 
-            SqlDataReader reader = command.ExecuteReader();
+                return reader;
 
-            return reader;
+            }
 
-               
-
-        }
+      
     }
 }

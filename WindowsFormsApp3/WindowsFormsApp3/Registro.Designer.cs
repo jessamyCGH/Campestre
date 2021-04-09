@@ -370,6 +370,7 @@ namespace WindowsFormsApp3
             this.btnHuella.Size = new System.Drawing.Size(81, 80);
             this.btnHuella.TabIndex = 54;
             this.btnHuella.UseVisualStyleBackColor = true;
+            this.btnHuella.Click += new System.EventHandler(this.btnHuella_Click);
             // 
             // btnCamara
             // 
@@ -423,7 +424,6 @@ namespace WindowsFormsApp3
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Registro";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Registro_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

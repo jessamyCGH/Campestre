@@ -22,12 +22,20 @@ namespace WindowsFormsApp3
 
         Usuario usuario = new Usuario();
         Conexion conexion = new Conexion();
+
+        private AppData Data;                   // keeps application-wide data
+        private HuellaFrom Enroller;
+       // private VerificationForm Verifier;
+
+
         private bool existenDispositivos = false;
         private bool fotografiaHecha = false;
         private FilterInfoCollection dispositivosDeVideo;
         private VideoCaptureDevice fuenteDeVideo = null;
-        public PictureBox pbFotoSocio = null; 
-
+        public PictureBox pbFotoSocio = null;
+                         // keeps application-wide data
+      //  private EnrollmentForm Enroller;
+      //  private VerificationForm Verifier;
 
         ObservableCollection<string> TipoGolf = new ObservableCollection<string>();
         ObservableCollection<string> TipoTenis = new ObservableCollection<string>();
@@ -41,14 +49,13 @@ namespace WindowsFormsApp3
 
             InitializeComponent();
             BuscarDispositivos();
-
-           
+            Data = new AppData();  // Create the application data object
+          //  Data.OnChange += delegate { ExchangeData(false); }; // Track data changes to keep the form synchronized
+            Enroller = new HuellaFrom(Data);
             //-------------------------------------------------------------------------
             //CAMARA
             GetInfo();
             camara.OnFrameArrived += camara_onFArameArrived;
-
-
            // ------------------------------------------------------------------------------
             //pantalla en el centro
             this.CenterToScreen();
@@ -56,11 +63,15 @@ namespace WindowsFormsApp3
             //------------------------------------------------------------------------------
             //SQLDATAREADER muestra la informacion de categorias tenis o golf
             //------------------------------------------------------------------------------
+            
+                 
             SqlDataReader reader = conexion.obtenerCategorias();
 
             MenuAnterior = menu;
             this.FormClosing += Registro_FormClosing;
 
+            //----------------------------------------------------------------------------------------------
+            //lee las categorias
             while (reader.Read())
             {
 
@@ -80,6 +91,8 @@ namespace WindowsFormsApp3
             cmbGolf.Items.AddRange(TipoGolf.ToArray());
             cmbTenis.Items.AddRange(TipoTenis.ToArray());
                 }
+        //----------------------------------------------------------------------------------------------------
+
         //------------------------------------------------------------------------------------------
 
         //-------------------------------------------------------------------------------------------
@@ -115,13 +128,17 @@ namespace WindowsFormsApp3
 
             MessageBox.Show(DateTime.Now + " ");
         }
+
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //Se registran los usuarios y se verifica si todos los campos este completos y correctos
         private void btnRegistar_Click_1(object sender, EventArgs e)
         {
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "insert INTO dbo.Usuario VALUES ('" + txtNombre.Text + "', '" + txtClub.Text + "', '" + txtCelular.Text + "',  '" + txtCorreo.Text + "', '" + txtPaterno.Text + "', '" + txtMaterno.Text + "' )";
-           
+           // huella();
+
             if (!string.IsNullOrEmpty(txtNombre.Text))
             {
                 usuario.Nombre = txtNombre.Text;
@@ -175,10 +192,9 @@ namespace WindowsFormsApp3
             cmd.ExecuteNonQuery();
             con.Close();
 
-            MessageBox.Show("Se actualizo corectamente");
-
-
+            MessageBox.Show("Se Inserto Corectamente");
         }
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         //--------------------------------------------------------------------------------------------
@@ -214,7 +230,7 @@ namespace WindowsFormsApp3
 
         private void btnCamara_Click(object sender, EventArgs eventArgs)
         {
-            /*  vid.Video_CaptureDevice = videoCapture1.Video_CaptureDevicesInfo[0].Name;
+            /*videoCapture1.Video_CaptureDevice = videoCapture1.Video_CaptureDevicesInfo[0].Name;
               videoCapture1.Audio_CaptureDevice = videoCapture1.Audio_CaptureDevicesInfo[0].Name;
               videoCapture1.Mode = VisioForge.Types.VFVideoCaptureMode.VideoPreview;
               videoCapture1.Start();*/
@@ -250,15 +266,7 @@ namespace WindowsFormsApp3
             cmbGolf.Text = "";
             cmbGolf.Enabled = false;
             cmbTenis.Text = "";
-            cmbTenis.Enabled = false;
-
-
-            
-
-
-
-           
-
+            cmbTenis.Enabled = false;       
         }
 
 
@@ -275,7 +283,7 @@ namespace WindowsFormsApp3
 
 
 
-        //------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------
         //Busca Si algun dispostivo esta conectado 
         private void BuscarDispositivos()
         {
@@ -287,8 +295,9 @@ namespace WindowsFormsApp3
                 existenDispositivos = true;
 
         }
+        //---------------------------------------------------------------------------------------------------
 
-        //------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------
         //Metodo para captura la imagen 
         private void Capturar()
         {
@@ -304,7 +313,10 @@ namespace WindowsFormsApp3
                 fuenteDeVideo.Stop();
         }
 
-        //--------------------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------------------
+
+        //-----------------------------------------------------------------------------------------------------
+        //Se muestra la imagen en el pictureBox
 
         private void MostrarImagen(object sender, NewFrameEventArgs eventArgs)
         {
@@ -313,10 +325,34 @@ namespace WindowsFormsApp3
 
         }
 
-        private void Registro_Load(object sender, EventArgs e)
+        private void btnHuella_Click(object sender, EventArgs e)
         {
 
+            // ExchangeData(true); 
+            // transfer values from the main form to the data object
+           
+             Enroller.ShowDialog();	// process enrollment*/
+           
         }
+
+        //------------------------------------------------------------------------------------------------------
+
+
+        // Simple dialog data exchange (DDX) implementation.
+       /* private void ExchangeData(bool read)
+        {
+            if (read)
+            {   // read values from the form's controls to the data object
+                
+                Data.Update();
+            }
+            else
+            {   // read valuse from the data object to the form's controls
+             
+            }
+        }*/
+
+
     }
-    
+
 }

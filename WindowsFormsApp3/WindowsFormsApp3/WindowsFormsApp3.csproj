@@ -61,6 +61,22 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Downloads\Webcam References\DarrenLee.Media.dll</HintPath>
     </Reference>
+    <Reference Include="DPFPDevNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=696774c42ee28c57, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resource\DPFPDevNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPEngNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=7fe76e7adf19964b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resource\DPFPEngNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPGuiNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=d4f4a0bd9c559145, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resource\DPFPGuiNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPShrNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=d902fe275a8d6cf2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resource\DPFPShrNET.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -95,12 +111,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppData.cs" />
     <Compile Include="Check.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Check.Designer.cs">
       <DependentUpon>Check.cs</DependentUpon>
     </Compile>
+    <Compile Include="HuellaClass.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="CrystalReport1.cs">
       <AutoGen>True</AutoGen>
@@ -108,11 +126,11 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="HuellaFrom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="HuellaFrom.Designer.cs">
+      <DependentUpon>HuellaFrom.cs</DependentUpon>
     </Compile>
     <Compile Include="Modificar.cs">
       <SubType>Form</SubType>
@@ -141,6 +159,9 @@
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HuellaFrom.resx">
+      <DependentUpon>HuellaFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modificar.resx">
       <DependentUpon>Modificar.cs</DependentUpon>
@@ -188,6 +209,8 @@
     <None Include="Resource\golf.png" />
     <None Include="Resource\false.png" />
     <None Include="Resource\delete.png" />
+    <None Include="Resource\Editar.png" />
+    <None Include="Resource\Edit.png" />
     <Content Include="Resource\huella.png" />
     <Content Include="Resource\justifi2.png" />
     <Content Include="Resource\pagos.png" />

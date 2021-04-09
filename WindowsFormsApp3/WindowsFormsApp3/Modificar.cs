@@ -8,19 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using AForge.Video.DirectShow;
+using AForge.Video;
+using WindowsFormsApp3.Modelos;
 
 namespace WindowsFormsApp3
 {
     public partial class Modificar : Form
     {
+        
         SqlConnection cadena = new SqlConnection(@"Data Source= DESKTOP-JH5TK9P;Initial Catalog=PRUEBA; Integrated Security= True");
         Conexion conexion = new Conexion();
+       
+
+        private bool existenDispositivos = false;
+        private bool fotografiaHecha = false;
+        private FilterInfoCollection dispositivosDeVideo;
+        private VideoCaptureDevice fuenteDeVideo = null;
+        public PictureBox pbFotoSocio = null;
         public Modificar()
         {
             InitializeComponent();
-
-
-            
+            BuscarDispositivos();
         }
 
         //--------------------------------------------------------------------------------------------------------
@@ -35,7 +44,6 @@ namespace WindowsFormsApp3
             txtCorreo.Text = "";
             txtClub.Text = "";
             txtCelular.Text = "";
-
             cmbGolf.Text = "";
             cmbTenis.Text = "";
             cmbTenis.Enabled = false;
@@ -47,13 +55,17 @@ namespace WindowsFormsApp3
         //--------------------------------------------------------------------------------------------------------
         private void BtnModificar_Click(object sender, EventArgs e)
         {
+
             cadena.Open();
+           
+         
             SqlCommand cmd = cadena.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "update dbo.Usuario SET (Nombre= nombre)";
 
-            cmd.Parameters.Add("nombre", txtNombre.Text);
+           
             cmd.ExecuteNonQuery();
+            
             cadena.Close();
 
             MessageBox.Show("Se actualizo corectamente");
@@ -62,9 +74,11 @@ namespace WindowsFormsApp3
         //--------------------------------------------------------------------------------------------------------
         //Borra los registros de la tabla 
         //--------------------------------------------------------------------------------------------------------
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBorrar_Click(object sender, EventArgs e)
         {
+            
             cadena.Open();
+           
             SqlCommand cmd = cadena.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "delete from dbo.Usuario where Nombre = '" + txtNombre.Text + "'";
@@ -76,29 +90,178 @@ namespace WindowsFormsApp3
 
         //--------------------------------------------------------------------------------------------------------------
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-          
+        
+
+
+        private void btnCamara_Click(object sender, EventArgs e)
         {
 
+            if (existenDispositivos)
+            {
+                fuenteDeVideo = new VideoCaptureDevice(dispositivosDeVideo[0].MonikerString);
+                fuenteDeVideo.NewFrame += new NewFrameEventHandler(MostrarImagen);
+                fuenteDeVideo.Start();
+            }
+            else
+            {
+                MessageBox.Show("No se encuentra ningún dispositivo de vídeo en el sistema", "Información", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Close();
+            }
+        }
+
+        //---------------------------------------------------------------------------------------------------
+        // Boton Captura la fotografia 
+
+        private void btnCapturar_Click(object sender, EventArgs e)
+        {
+            Capturar();
+            fotografiaHecha = true;
+
+        }
+        //--------------------------------------------------------------------------------------------------
+
+
+
+        //---------------------------------------------------------------------------------------------------
+        //Busca Si algun dispostivo esta conectado 
+        private void BuscarDispositivos()
+        {
+            dispositivosDeVideo = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+
+            if (dispositivosDeVideo.Count == 0)
+                existenDispositivos = false;
+            else
+                existenDispositivos = true;
+
+        }
+        //---------------------------------------------------------------------------------------------------
+
+        //---------------------------------------------------------------------------------------------------
+        //Metodo para captura la imagen 
+        private void Capturar()
+        {
+            if (fuenteDeVideo != null)
+            {
+                if (fuenteDeVideo.IsRunning)
+                {
+                    picFoto.Image = picFoto.Image;
+
+                }
+            }
+            if (fuenteDeVideo != null)
+                fuenteDeVideo.Stop();
+        }
+
+        //----------------------------------------------------------------------------------------------------
+
+        //-----------------------------------------------------------------------------------------------------
+        //Se muestra la imagen en el pictureBox
+
+        private void MostrarImagen(object sender, NewFrameEventArgs eventArgs)
+        {
+            Bitmap imagen = (Bitmap)eventArgs.Frame.Clone();
+            picFoto.Image = imagen;
+
+        }
+
+        private void btnCapturar_Click_1(object sender, EventArgs e)
+        {
+            Capturar();
+            fotografiaHecha = true;
+
+        }
+
+        //------------------------------------------------------------------------------------------------------
+
+
+        public void Info ()
+        {
             cadena.Open();
             SqlCommand cmd = cadena.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT * from dbo.Usuario where Nombre = '" + TxtBuscar.Text + "'";
+            cmd.CommandText = "select Nombre from dbo.Usuario VALUES (@Nombre) ";
+           // cmd.Parameters.Add("@Nombre", txtNombre.Text);
+            cmd.ExecuteNonQuery();
+            Console.WriteLine(cmd);
+            cadena.Close();
+           // MessageBox.Show("Borrado Exitosamente");
+        }
+
+
+
+        //-------------------------------------------------------------------------------------------------------------------------------------
+        //Metodo para buscar en el registro 
+        //-------------------------------------------------------------------------------------------------------------------------------------
+        public void Buscar()
+        {
+            {
+                cadena.Open();
+                string bus = TxtBuscar.Text;
+                SqlDataReader reader = null;
+
+
+                string sql = "SELECT Nombre, Club, Celular, Correo, Paterno, Materno from dbo.Usuario where Nombre like '" + bus + "' ";
+                cadena.Open();
+
+                try
+                {
+                    SqlCommand command = new SqlCommand(sql, cadena);
+                    reader = command.ExecuteReader();
+
+
+                    while (reader.Read())
+
+                    {
+                        txtNombre.Text = reader.GetString(1);
+                        txtClub.Text = reader.GetString(2);
+                        txtCelular.Text = reader.GetString(3);
+                        txtCorreo.Text = reader.GetString(4);
+                        txtPaterno.Text = reader.GetString(5);
+                        txtMaterno.Text = reader.GetString(6);
+                    }
+
+
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("error al buscar", ex.Message);
+                }
+                finally
+                {
+                    cadena.Close();
+                }
+
+            }
+        }
+
+        private void btnBusca_Click(object sender, EventArgs e)
+        {
+            SqlDataReader reader = conexion.buscar(txtbus.Text);
             try
             {
-                cmd.ExecuteNonQuery();
-                Console.WriteLine(cmd.CommandType);
-                cadena.Close();
-                MessageBox.Show("Busqueda exitosa");
+                while (reader.Read())
+
+                {
+                    txtNombre.Text = reader.GetString(1);
+                    txtClub.Text = reader.GetString(2);
+                    txtCelular.Text = reader.GetString(3);
+                    txtCorreo.Text = reader.GetString(4);
+                    txtPaterno.Text = reader.GetString(5);
+                    txtMaterno.Text = reader.GetString(6);
+                }
             }
-            catch
+
+            catch (SqlException ex)
             {
-                MessageBox.Show("No encontrado");
+                MessageBox.Show("error al buscar", ex.Message);
             }
-
-
-
+            finally
+            {
+                cadena.Close();
+            }
 
         }
+        //------------------------------------------------------------------------------------------------------------------------------------------
     }
+
 }
