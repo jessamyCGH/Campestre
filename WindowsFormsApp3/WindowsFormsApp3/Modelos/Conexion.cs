@@ -21,7 +21,7 @@ namespace WindowsFormsApp3
 
         
 
-        public SqlDataReader buscar(string Nombrer)
+        /*public SqlDataReader buscar(string Nombrer)
         {
             {
                 cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
@@ -36,7 +36,7 @@ namespace WindowsFormsApp3
             }
 
 
-        }
+        }*/
 
         public ObservableCollection<string> obtenerCategoriasGolf()
         {
