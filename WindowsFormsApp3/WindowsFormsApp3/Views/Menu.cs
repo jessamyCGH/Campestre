@@ -70,5 +70,13 @@ namespace WindowsFormsApp3
             modificar.Show();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Conexion conexion = new Conexion();
+            var uno = conexion.obtenerTorneosActuales();
+            var dos = conexion.obtenerCategoriasGolf();
+            var tres = conexion.obtenerCategoriasTennis();
+        }
     }
 }

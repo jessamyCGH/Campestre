@@ -7,17 +7,17 @@ using System.Data.SqlClient;
 using System.Collections.ObjectModel;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using DarrenLee.Media;
 
 namespace WindowsFormsApp3
 {
     public partial class Registro : Form
     {
-        Camera camara = new Camera();
+        Camera camara;
 
         Usuario usuario = new Usuario();
         Conexion conexion = new Conexion();
 
-        private AppData Data;                   // keeps application-wide data
         private HuellaFrom Enroller;
        // private VerificationForm Verifier;
 
@@ -43,13 +43,21 @@ namespace WindowsFormsApp3
 
             InitializeComponent();
             BuscarDispositivos();
-            Data = new AppData();  // Create the application data object
-          //  Data.OnChange += delegate { ExchangeData(false); }; // Track data changes to keep the form synchronized
-            Enroller = new HuellaFrom(Data);
+
+            try
+            {
+               // camara = new Camera();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Por favor conecte una camara y reinicie el programa.");
+                Environment.Exit(1);
+            }
+
             //-------------------------------------------------------------------------
             //CAMARA
-            GetInfo();
-            camara.OnFrameArrived += camara_onFArameArrived;
+            //GetInfo();
+            //camara.OnFrameArrived += camara_onFArameArrived;
            // ------------------------------------------------------------------------------
             //pantalla en el centro
             this.CenterToScreen();
@@ -59,32 +67,18 @@ namespace WindowsFormsApp3
             //------------------------------------------------------------------------------
             
                  
-            SqlDataReader reader = conexion.obtenerCategorias();
 
             MenuAnterior = menu;
             this.FormClosing += Registro_FormClosing;
 
             //----------------------------------------------------------------------------------------------
             //lee las categorias
-            while (reader.Read())
-            {
+            
 
-                // if (reader["Descripcion"].Equals("Golf"))
-                if (reader["Tipo"].Equals("G"))
-                {
-                    TipoGolf.Add(reader["Descripcion"] + " ");
 
-                }
-                else
-                {
-                    TipoTenis.Add(reader["Descripcion"] + " ");
-                }
+            cmbGolf.Items.AddRange(conexion.obtenerCategoriasGolf().ToArray());
+            cmbTenis.Items.AddRange(conexion.obtenerCategoriasTennis().ToArray());
             }
-
-
-            cmbGolf.Items.AddRange(TipoGolf.ToArray());
-            cmbTenis.Items.AddRange(TipoTenis.ToArray());
-                }
         //----------------------------------------------------------------------------------------------------
 
         //------------------------------------------------------------------------------------------
@@ -101,12 +95,12 @@ namespace WindowsFormsApp3
         //--------------------------------------------------------------------------------------------
 
         //--------------------------------------------------------------------------------------------
-        private void GetInfo()
+      /* private void GetInfo()
         {
             var camaraDevices = camara.GetCameraSources();
             var cameraResolution = camara.GetSupportedResolutions();
 
-        }
+        }*/
 
 
         //--------------------------------------------------------------------------------------------
@@ -183,8 +177,6 @@ namespace WindowsFormsApp3
                 MessageBox.Show("El nombre ingresado es incorrecto");
             }
 
-            cmd.ExecuteNonQuery();
-            con.Close();
 
             MessageBox.Show("Se Inserto Corectamente");
         }

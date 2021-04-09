@@ -1,0 +1,308 @@
+USE [master]
+GO
+/****** Object:  Database [TorneoAnual]    Script Date: 08/04/2021 09:52:47 p. m. ******/
+CREATE DATABASE [TorneoAnual]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'TorneoAnual', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\TorneoAnual.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'TorneoAnual_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\TorneoAnual_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [TorneoAnual] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [TorneoAnual].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [TorneoAnual] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [TorneoAnual] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [TorneoAnual] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET  ENABLE_BROKER 
+GO
+ALTER DATABASE [TorneoAnual] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [TorneoAnual] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET RECOVERY FULL 
+GO
+ALTER DATABASE [TorneoAnual] SET  MULTI_USER 
+GO
+ALTER DATABASE [TorneoAnual] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [TorneoAnual] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [TorneoAnual] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [TorneoAnual] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [TorneoAnual] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [TorneoAnual] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'TorneoAnual', N'ON'
+GO
+ALTER DATABASE [TorneoAnual] SET QUERY_STORE = OFF
+GO
+USE [TorneoAnual]
+GO
+/****** Object:  Table [dbo].[Alimentos]    Script Date: 08/04/2021 09:52:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Alimentos](
+	[id_user] [int] NOT NULL,
+	[fecha] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id_user] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Categoria]    Script Date: 08/04/2021 09:52:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Categoria](
+	[id_cat] [int] NOT NULL,
+	[descripcion] [varchar](25) NOT NULL,
+	[tipo] [char](1) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id_cat] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Cerveza]    Script Date: 08/04/2021 09:52:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Cerveza](
+	[id_user] [int] NOT NULL,
+	[countCervezas] [int] NOT NULL,
+	[fecha] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id_user] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Clausura]    Script Date: 08/04/2021 09:52:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Clausura](
+	[id_user] [int] NOT NULL,
+	[fecha] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id_user] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Concierto]    Script Date: 08/04/2021 09:52:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Concierto](
+	[id_user] [int] NOT NULL,
+	[fecha] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id_user] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Golf]    Script Date: 08/04/2021 09:52:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Golf](
+	[id_user] [int] NOT NULL,
+	[fecha] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id_user] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Inaguracion]    Script Date: 08/04/2021 09:52:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Inaguracion](
+	[id_user] [int] NOT NULL,
+	[fecha] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id_user] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Tennis]    Script Date: 08/04/2021 09:52:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Tennis](
+	[id_user] [int] NOT NULL,
+	[fecha] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id_user] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Torneo]    Script Date: 08/04/2021 09:52:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Torneo](
+	[id_torneo] [int] NOT NULL,
+	[fecha_inicio] [datetime] NOT NULL,
+	[fecha_fin] [datetime] NOT NULL,
+	[lugar_sede] [nvarchar](255) NOT NULL,
+	[descripcion] [nvarchar](255) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id_torneo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Usuarios]    Script Date: 08/04/2021 09:52:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Usuarios](
+	[id] [int] NOT NULL,
+	[nombre] [varchar](40) NOT NULL,
+	[apellidoP] [varchar](25) NOT NULL,
+	[apellidoM] [varchar](25) NOT NULL,
+	[correo] [varchar](25) NOT NULL,
+	[tel] [varchar](10) NOT NULL,
+	[club] [nvarchar](255) NOT NULL,
+	[id_cat] [int] NOT NULL,
+	[huella] [nvarchar](255) NULL,
+	[imagen] [image] NULL,
+	[id_torneo] [int] NOT NULL,
+	[fecha_registro] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (1, N'Profesional', N'T')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (2, N'1ra', N'T')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (3, N'2da', N'T')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (4, N'3ra', N'T')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (5, N'Novatos Fem.', N'T')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (6, N'Novatos Var.', N'T')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (7, N'Infantil A', N'T')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (8, N'Infantil B', N'T')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (9, N'Infantil C', N'T')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (10, N'Mini Tennis', N'T')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (11, N'Campeonato', N'G')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (12, N'AA', N'G')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (13, N'A', N'G')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (14, N'B', N'G')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (15, N'C', N'G')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (16, N'D', N'G')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (17, N'E', N'G')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (18, N'Seniors A', N'G')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (19, N'Seniors B', N'G')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (20, N'Damas 1ra', N'G')
+GO
+INSERT [dbo].[Categoria] ([id_cat], [descripcion], [tipo]) VALUES (21, N'Damas 2da', N'G')
+GO
+INSERT [dbo].[Torneo] ([id_torneo], [fecha_inicio], [fecha_fin], [lugar_sede], [descripcion]) VALUES (1, CAST(N'2016-10-23T20:44:11.000' AS DateTime), CAST(N'2016-10-23T20:44:11.000' AS DateTime), N'Campestre Torreon', N'Torneo Anual')
+GO
+ALTER TABLE [dbo].[Alimentos]  WITH CHECK ADD FOREIGN KEY([id_user])
+REFERENCES [dbo].[Usuarios] ([id])
+GO
+ALTER TABLE [dbo].[Cerveza]  WITH CHECK ADD FOREIGN KEY([id_user])
+REFERENCES [dbo].[Usuarios] ([id])
+GO
+ALTER TABLE [dbo].[Clausura]  WITH CHECK ADD FOREIGN KEY([id_user])
+REFERENCES [dbo].[Usuarios] ([id])
+GO
+ALTER TABLE [dbo].[Concierto]  WITH CHECK ADD FOREIGN KEY([id_user])
+REFERENCES [dbo].[Usuarios] ([id])
+GO
+ALTER TABLE [dbo].[Golf]  WITH CHECK ADD FOREIGN KEY([id_user])
+REFERENCES [dbo].[Usuarios] ([id])
+GO
+ALTER TABLE [dbo].[Inaguracion]  WITH CHECK ADD FOREIGN KEY([id_user])
+REFERENCES [dbo].[Usuarios] ([id])
+GO
+ALTER TABLE [dbo].[Tennis]  WITH CHECK ADD FOREIGN KEY([id_user])
+REFERENCES [dbo].[Usuarios] ([id])
+GO
+USE [master]
+GO
+ALTER DATABASE [TorneoAnual] SET  READ_WRITE 
+GO
