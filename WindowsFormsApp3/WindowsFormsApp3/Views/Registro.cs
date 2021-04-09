@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp3.Modelos;
 using System.Data.SqlClient;
 using System.Collections.ObjectModel;
 using AForge.Video;
 using AForge.Video.DirectShow;
-using DarrenLee.Media;
 
 namespace WindowsFormsApp3
 {
@@ -133,11 +127,11 @@ namespace WindowsFormsApp3
         //Se registran los usuarios y se verifica si todos los campos este completos y correctos
         private void btnRegistar_Click_1(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert INTO dbo.Usuario VALUES ('" + txtNombre.Text + "', '" + txtClub.Text + "', '" + txtCelular.Text + "',  '" + txtCorreo.Text + "', '" + txtPaterno.Text + "', '" + txtMaterno.Text + "' )";
-           // huella();
+            //con.Open();
+            //SqlCommand cmd = con.CreateCommand();
+            //cmd.CommandType = CommandType.Text;
+            //cmd.CommandText = "insert INTO dbo.Usuario VALUES ('" + txtNombre.Text + "', '" + txtClub.Text + "', '" + txtCelular.Text + "',  '" + txtCorreo.Text + "', '" + txtPaterno.Text + "', '" + txtMaterno.Text + "' )";
+            // huella();
 
             if (!string.IsNullOrEmpty(txtNombre.Text))
             {
@@ -251,7 +245,7 @@ namespace WindowsFormsApp3
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-
+            conexion.obtenerTorneosActuales();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
