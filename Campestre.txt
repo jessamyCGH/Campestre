@@ -29,9 +29,8 @@ cuando la persona recoga sus alimentos nos va a imprimir un ticket
 
 
 
-CREATE DATABASE TORNEOANUAL;
-USE TORNEOANUAL;
-
+create database TorneoAnual;
+use TorneoAnual;
 CREATE TABLE [Usuarios] (
   [id] int PRIMARY KEY NOT NULL,
   [nombre] varchar(40) NOT NULL,
@@ -40,7 +39,7 @@ CREATE TABLE [Usuarios] (
   [correo] varchar(25) NOT NULL,
   [tel] varchar(10) NOT NULL,
   [club] nvarchar(255) NOT NULL,
-  [id_cat] int,
+  [id_cat] int NOT NULL,
   [huella] nvarchar(255),
   [imagen] image,
   [id_torneo] int NOT NULL,
@@ -50,8 +49,8 @@ GO
 
 CREATE TABLE [Torneo] (
   [id_torneo] int PRIMARY KEY NOT NULL,
-  [fecha_inicio] nvarchar(255) NOT NULL,
-  [fecha_fin] nvarchar(255) NOT NULL,
+  [fecha_inicio] datetime NOT NULL,
+  [fecha_fin] datetime NOT NULL,
   [lugar_sede] nvarchar(255) NOT NULL,
   [descripcion] nvarchar(255) NOT NULL
 )
@@ -133,4 +132,3 @@ GO
 
 ALTER TABLE [Clausura] ADD FOREIGN KEY ([id_user]) REFERENCES [Usuarios] ([id])
 GO
-
