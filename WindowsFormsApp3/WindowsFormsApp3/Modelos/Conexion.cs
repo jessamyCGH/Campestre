@@ -202,6 +202,170 @@ namespace WindowsFormsApp3
 
         #endregion
 
+        #region Tennis
+        public bool getEntregadoTennis(int id_user)
+        {
+            cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
+            conectarBDT.ConnectionString = cadena;
+            conectarBDT.Open();
+
+            SqlCommand command = new SqlCommand("SELECT id_user,fecha FROM Tennis WHERE id_user = @id_user", conectarBDT);
+            command.Parameters.AddWithValue("id_user", id_user);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+
+            if (reader.HasRows)
+            {
+                conectarBDT.Close();
+                return true;
+            }
+            else
+            {
+                conectarBDT.Close();
+                return false;
+            }
+        }
+
+        public void setEntregadoTennis(int id)
+        {
+            cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
+            conectarBDT.ConnectionString = cadena;
+            conectarBDT.Open();
+
+            SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Tennis]([id_user],[fecha])VALUES(@id_user, @fecha)", conectarBDT);
+            command.Parameters.AddWithValue("id_user", id);
+            command.Parameters.AddWithValue("fecha", DateTime.Now);
+
+            command.ExecuteReader();
+            conectarBDT.Close();
+        }
+
+        #endregion
+
+        #region Golf
+        public bool getEntregadoGolf(int id_user)
+        {
+            cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
+            conectarBDT.ConnectionString = cadena;
+            conectarBDT.Open();
+
+            SqlCommand command = new SqlCommand("SELECT id_user,fecha FROM Golf WHERE id_user = @id_user", conectarBDT);
+            command.Parameters.AddWithValue("id_user", id_user);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+
+            if (reader.HasRows)
+            {
+                conectarBDT.Close();
+                return true;
+            }
+            else
+            {
+                conectarBDT.Close();
+                return false;
+            }
+        }
+
+        public void setEntregadoGolf(int id)
+        {
+            cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
+            conectarBDT.ConnectionString = cadena;
+            conectarBDT.Open();
+
+            SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Golf]([id_user],[fecha])VALUES(@id_user, @fecha)", conectarBDT);
+            command.Parameters.AddWithValue("id_user", id);
+            command.Parameters.AddWithValue("fecha", DateTime.Now);
+
+            command.ExecuteReader();
+            conectarBDT.Close();
+        }
+
+        #endregion
+
+        #region Concierto
+        public bool getEntregadoConcierto(int id_user)
+        {
+            cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
+            conectarBDT.ConnectionString = cadena;
+            conectarBDT.Open();
+
+            SqlCommand command = new SqlCommand("SELECT id_user,fecha FROM Concierto WHERE id_user = @id_user", conectarBDT);
+            command.Parameters.AddWithValue("id_user", id_user);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+
+            if (reader.HasRows)
+            {
+                conectarBDT.Close();
+                return true;
+            }
+            else
+            {
+                conectarBDT.Close();
+                return false;
+            }
+        }
+
+        public void setEntregadoConcierto(int id)
+        {
+            cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
+            conectarBDT.ConnectionString = cadena;
+            conectarBDT.Open();
+
+            SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Concierto]([id_user],[fecha])VALUES(@id_user, @fecha)", conectarBDT);
+            command.Parameters.AddWithValue("id_user", id);
+            command.Parameters.AddWithValue("fecha", DateTime.Now);
+
+            command.ExecuteReader();
+            conectarBDT.Close();
+        }
+
+        #endregion
+
+        #region Clausura
+        public bool getEntregadoClausura(int id_user)
+        {
+            cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
+            conectarBDT.ConnectionString = cadena;
+            conectarBDT.Open();
+
+            SqlCommand command = new SqlCommand("SELECT id_user,fecha FROM Clausura WHERE id_user = @id_user", conectarBDT);
+            command.Parameters.AddWithValue("id_user", id_user);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+
+            if (reader.HasRows)
+            {
+                conectarBDT.Close();
+                return true;
+            }
+            else
+            {
+                conectarBDT.Close();
+                return false;
+            }
+        }
+
+        public void setEntregadoClausura(int id)
+        {
+            cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
+            conectarBDT.ConnectionString = cadena;
+            conectarBDT.Open();
+
+            SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Clausura]([id_user],[fecha])VALUES(@id_user, @fecha)", conectarBDT);
+            command.Parameters.AddWithValue("id_user", id);
+            command.Parameters.AddWithValue("fecha", DateTime.Now);
+
+            command.ExecuteReader();
+            conectarBDT.Close();
+        }
+
+        #endregion
+
         public ObservableCollection<string> getAllNamesUsers()
         {
             cadena = cadena.Replace("{nombrePC}", Environment.MachineName);

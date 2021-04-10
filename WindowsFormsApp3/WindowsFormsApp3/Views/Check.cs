@@ -108,13 +108,29 @@ namespace WindowsFormsApp3
                         btnEntregado.Enabled = true;
                     }
                     break;
+
                 case "Tennis":
+                    //Verificaremos si ya la fue entregado Tennis
+                    res = conexion.getEntregadoTennis(id);
+                    ChecarEntregado(res);
                     break;
+
                 case "Golf":
+                    //Verificaremos si ya la fue entregado Golf
+                    res = conexion.getEntregadoGolf(id);
+                    ChecarEntregado(res);
                     break;
+
                 case "Concierto":
+                    //Verificaremos si ya la fue entregado Concierto
+                    res = conexion.getEntregadoConcierto(id);
+                    ChecarEntregado(res);
                     break;
+
                 case "Clausura":
+                    //Verificaremos si ya la fue entregado Clausura
+                    res = conexion.getEntregadoClausura(id);
+                    ChecarEntregado(res);
                     break;
             }
         }
@@ -267,6 +283,7 @@ namespace WindowsFormsApp3
                     break;
 
                 case "Cerveza":
+                    //Le agregaremos la entrega en la base de datos al usuario de Cerveza
                     conexion.setEntregadoCerveza(id, countCervezas += 2);
                     ChecarEntregado(true);
                     btnEntregado.Text = "Tomara otras 2";
@@ -275,15 +292,27 @@ namespace WindowsFormsApp3
                     break;
 
                 case "Tennis":
+                    //Le agregaremos la entrega en la base de datos al usuario de Tennis
+                    conexion.setEntregadoTennis(id);
+                    ChecarEntregado(true);
                     break;
 
                 case "Golf":
+                    //Le agregaremos la entrega en la base de datos al usuario de Golf
+                    conexion.setEntregadoGolf(id);
+                    ChecarEntregado(true);
                     break;
 
                 case "Concierto":
+                    //Le agregaremos la entrega en la base de datos al usuario de Concierto
+                    conexion.setEntregadoConcierto(id);
+                    ChecarEntregado(true);
                     break;
 
                 case "Clausura":
+                    //Le agregaremos la entrega en la base de datos al usuario de Clausura
+                    conexion.setEntregadoClausura(id);
+                    ChecarEntregado(true);
                     break;
             }
         }
