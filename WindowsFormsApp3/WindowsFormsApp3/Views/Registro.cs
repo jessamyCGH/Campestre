@@ -33,6 +33,7 @@ namespace WindowsFormsApp3
 
         ObservableCollection<string> TipoGolf = new ObservableCollection<string>();
         ObservableCollection<string> TipoTenis = new ObservableCollection<string>();
+        ObservableCollection<string> Torneo = new ObservableCollection<string>();
 
 
         SqlConnection con = new SqlConnection(@"Data Source= DESKTOP-JH5TK9P;Initial Catalog=PRUEBA; Integrated Security= True");
@@ -71,19 +72,13 @@ namespace WindowsFormsApp3
             MenuAnterior = menu;
             this.FormClosing += Registro_FormClosing;
 
-            //----------------------------------------------------------------------------------------------
+           
             //lee las categorias
-            
-
-
             cmbGolf.Items.AddRange(conexion.obtenerCategoriasGolf().ToArray());
             cmbTenis.Items.AddRange(conexion.obtenerCategoriasTennis().ToArray());
+            cmbTorneo.Items.AddRange(conexion.obtenerTorneosActuales().ToArray());
             }
-        //----------------------------------------------------------------------------------------------------
-
-        //------------------------------------------------------------------------------------------
-
-        //-------------------------------------------------------------------------------------------
+      
         //Metodo para la camara 
         private void camara_onFArameArrived(object source, FrameArrivedEventArgs e)
         {
@@ -92,19 +87,13 @@ namespace WindowsFormsApp3
 
         }
 
-        //--------------------------------------------------------------------------------------------
-
-        //--------------------------------------------------------------------------------------------
+    
       /* private void GetInfo()
         {
             var camaraDevices = camara.GetCameraSources();
             var cameraResolution = camara.GetSupportedResolutions();
 
         }*/
-
-
-        //--------------------------------------------------------------------------------------------
-         
 
         private void Registro_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -117,7 +106,7 @@ namespace WindowsFormsApp3
             MessageBox.Show(DateTime.Now + " ");
         }
 
-        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
         //Se registran los usuarios y se verifica si todos los campos este completos y correctos
         private void btnRegistar_Click_1(object sender, EventArgs e)
         {
@@ -146,6 +135,7 @@ namespace WindowsFormsApp3
                                 {
                                     usuario.Correo = txtCorreo.Text;
                                     usuario.Fecha = DateTime.Now + "";
+
                                 }
                                 else
                                 {
@@ -180,10 +170,7 @@ namespace WindowsFormsApp3
 
             MessageBox.Show("Se Inserto Corectamente");
         }
-        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        //--------------------------------------------------------------------------------------------
+        
         //Desahbilita/ hablita el chkTenis, dependiendo del evento recibido
 
         private void chkTenis_CheckedChanged(object sender, EventArgs e)
@@ -196,10 +183,7 @@ namespace WindowsFormsApp3
                 chkGolf.Checked = false;
             }
         }
-        //--------------------------------------------------------------------------------------------
-
-
-        //--------------------------------------------------------------------------------------------
+      
         //Desahbilita/ habilita el chkTenis, dependiendo del evento recibido
         private void chkGolf_CheckedChanged(object sender, EventArgs e)
         {
@@ -211,9 +195,7 @@ namespace WindowsFormsApp3
                 chkTenis.Checked = false;
             }
         }
-        //-----------------------------------------------------------------------------------------------------
-
-
+      
         private void btnCamara_Click(object sender, EventArgs eventArgs)
         {
             /*videoCapture1.Video_CaptureDevice = videoCapture1.Video_CaptureDevicesInfo[0].Name;
@@ -255,8 +237,6 @@ namespace WindowsFormsApp3
             cmbTenis.Enabled = false;       
         }
 
-
-        //---------------------------------------------------------------------------------------------------
         // Boton Captura la fotografia 
 
         private void btnCapturar_Click(object sender, EventArgs e)
@@ -265,11 +245,7 @@ namespace WindowsFormsApp3
             fotografiaHecha = true;
 
         }
-        //--------------------------------------------------------------------------------------------------
 
-
-
-        //---------------------------------------------------------------------------------------------------
         //Busca Si algun dispostivo esta conectado 
         private void BuscarDispositivos()
         {
@@ -281,9 +257,7 @@ namespace WindowsFormsApp3
                 existenDispositivos = true;
 
         }
-        //---------------------------------------------------------------------------------------------------
 
-        //---------------------------------------------------------------------------------------------------
         //Metodo para captura la imagen 
         private void Capturar()
         {
@@ -299,9 +273,6 @@ namespace WindowsFormsApp3
                 fuenteDeVideo.Stop();
         }
 
-        //----------------------------------------------------------------------------------------------------
-
-        //-----------------------------------------------------------------------------------------------------
         //Se muestra la imagen en el pictureBox
 
         private void MostrarImagen(object sender, NewFrameEventArgs eventArgs)
@@ -320,8 +291,6 @@ namespace WindowsFormsApp3
              Enroller.ShowDialog();	// process enrollment*/
            
         }
-
-        //------------------------------------------------------------------------------------------------------
 
 
         // Simple dialog data exchange (DDX) implementation.
