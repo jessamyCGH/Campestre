@@ -316,5 +316,10 @@ namespace WindowsFormsApp3
                     break;
             }
         }
+
+        private void cbBoxNombre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

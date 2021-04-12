@@ -30,6 +30,7 @@ namespace WindowsFormsApp3
         {
             InitializeComponent();
             BuscarDispositivos();
+            cmbBusqueda.Items.AddRange(conexion.getAllNamesUsers().ToArray());
         }
 
         
@@ -176,17 +177,17 @@ namespace WindowsFormsApp3
 
 
 
-        private void btnBusca_Click(object sender, EventArgs e)
-        {
-          
-
-        }
+      
 
         private void btnHuella_Click(object sender, EventArgs e)
         {
 
         }
-       
+
+        private void cmbBusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 
 }

@@ -69,8 +69,9 @@ namespace WindowsFormsApp3
             this.label10 = new System.Windows.Forms.Label();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.picFoto = new System.Windows.Forms.PictureBox();
-            this.txtbus = new System.Windows.Forms.TextBox();
-            this.btnBusca = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cmbTorneo = new System.Windows.Forms.ComboBox();
+            this.cmbBusqueda = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -83,25 +84,26 @@ namespace WindowsFormsApp3
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.lbltTitulo);
             this.panel1.Location = new System.Drawing.Point(0, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1060, 69);
+            this.panel1.Size = new System.Drawing.Size(795, 56);
             this.panel1.TabIndex = 84;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(3, 59);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(2, 48);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1059, 10);
+            this.panel2.Size = new System.Drawing.Size(794, 8);
             this.panel2.TabIndex = 39;
             // 
             // lbltTitulo
             // 
             this.lbltTitulo.AutoSize = true;
             this.lbltTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltTitulo.Location = new System.Drawing.Point(307, 7);
+            this.lbltTitulo.Location = new System.Drawing.Point(230, 6);
+            this.lbltTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbltTitulo.Name = "lbltTitulo";
             this.lbltTitulo.Size = new System.Drawing.Size(391, 39);
             this.lbltTitulo.TabIndex = 0;
@@ -116,11 +118,9 @@ namespace WindowsFormsApp3
             this.groupBox2.Controls.Add(this.chkGolf);
             this.groupBox2.Controls.Add(this.chkTenis);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(80, 374);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(60, 304);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(419, 199);
+            this.groupBox2.Size = new System.Drawing.Size(314, 162);
             this.groupBox2.TabIndex = 81;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Categoria";
@@ -129,8 +129,7 @@ namespace WindowsFormsApp3
             // 
             this.lblGolf.AutoSize = true;
             this.lblGolf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGolf.Location = new System.Drawing.Point(37, 140);
-            this.lblGolf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGolf.Location = new System.Drawing.Point(28, 114);
             this.lblGolf.Name = "lblGolf";
             this.lblGolf.Size = new System.Drawing.Size(36, 16);
             this.lblGolf.TabIndex = 42;
@@ -140,18 +139,17 @@ namespace WindowsFormsApp3
             // 
             this.cmbGolf.Enabled = false;
             this.cmbGolf.FormattingEnabled = true;
-            this.cmbGolf.Location = new System.Drawing.Point(116, 142);
-            this.cmbGolf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbGolf.Location = new System.Drawing.Point(87, 115);
+            this.cmbGolf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbGolf.Name = "cmbGolf";
-            this.cmbGolf.Size = new System.Drawing.Size(163, 24);
+            this.cmbGolf.Size = new System.Drawing.Size(123, 21);
             this.cmbGolf.TabIndex = 41;
             // 
             // lblTenis
             // 
             this.lblTenis.AutoSize = true;
             this.lblTenis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenis.Location = new System.Drawing.Point(37, 101);
-            this.lblTenis.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTenis.Location = new System.Drawing.Point(28, 82);
             this.lblTenis.Name = "lblTenis";
             this.lblTenis.Size = new System.Drawing.Size(47, 16);
             this.lblTenis.TabIndex = 40;
@@ -161,19 +159,18 @@ namespace WindowsFormsApp3
             // 
             this.cmbTenis.Enabled = false;
             this.cmbTenis.FormattingEnabled = true;
-            this.cmbTenis.Location = new System.Drawing.Point(116, 101);
-            this.cmbTenis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbTenis.Location = new System.Drawing.Point(87, 82);
+            this.cmbTenis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbTenis.Name = "cmbTenis";
-            this.cmbTenis.Size = new System.Drawing.Size(163, 24);
+            this.cmbTenis.Size = new System.Drawing.Size(123, 21);
             this.cmbTenis.TabIndex = 4;
             // 
             // chkGolf
             // 
             this.chkGolf.AutoSize = true;
-            this.chkGolf.Location = new System.Drawing.Point(179, 28);
-            this.chkGolf.Margin = new System.Windows.Forms.Padding(4);
+            this.chkGolf.Location = new System.Drawing.Point(134, 23);
             this.chkGolf.Name = "chkGolf";
-            this.chkGolf.Size = new System.Drawing.Size(51, 20);
+            this.chkGolf.Size = new System.Drawing.Size(45, 17);
             this.chkGolf.TabIndex = 3;
             this.chkGolf.Text = "Golf";
             this.chkGolf.UseVisualStyleBackColor = true;
@@ -181,10 +178,9 @@ namespace WindowsFormsApp3
             // chkTenis
             // 
             this.chkTenis.AutoSize = true;
-            this.chkTenis.Location = new System.Drawing.Point(43, 28);
-            this.chkTenis.Margin = new System.Windows.Forms.Padding(4);
+            this.chkTenis.Location = new System.Drawing.Point(32, 23);
             this.chkTenis.Name = "chkTenis";
-            this.chkTenis.Size = new System.Drawing.Size(61, 20);
+            this.chkTenis.Size = new System.Drawing.Size(52, 17);
             this.chkTenis.TabIndex = 2;
             this.chkTenis.Text = "Tenis";
             this.chkTenis.UseVisualStyleBackColor = true;
@@ -193,8 +189,7 @@ namespace WindowsFormsApp3
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 74);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(7, 60);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 16);
             this.label9.TabIndex = 1;
@@ -204,8 +199,7 @@ namespace WindowsFormsApp3
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(789, 464);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(592, 377);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 16);
             this.label8.TabIndex = 78;
@@ -216,11 +210,9 @@ namespace WindowsFormsApp3
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(80, 409);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(60, 332);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(412, 134);
+            this.groupBox1.Size = new System.Drawing.Size(309, 109);
             this.groupBox1.TabIndex = 76;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Categoria";
@@ -228,10 +220,9 @@ namespace WindowsFormsApp3
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(199, 23);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox2.Location = new System.Drawing.Point(149, 19);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(93, 20);
+            this.checkBox2.Size = new System.Drawing.Size(80, 17);
             this.checkBox2.TabIndex = 3;
             this.checkBox2.Text = "checkBox2";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -239,10 +230,9 @@ namespace WindowsFormsApp3
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(36, 23);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox1.Location = new System.Drawing.Point(27, 19);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(93, 20);
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
             this.checkBox1.TabIndex = 2;
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -251,8 +241,7 @@ namespace WindowsFormsApp3
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 74);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(7, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 16);
             this.label2.TabIndex = 1;
@@ -260,58 +249,51 @@ namespace WindowsFormsApp3
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(207, 314);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCorreo.Location = new System.Drawing.Point(155, 255);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(332, 22);
+            this.txtCorreo.Size = new System.Drawing.Size(250, 20);
             this.txtCorreo.TabIndex = 75;
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(207, 278);
-            this.txtCelular.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCelular.Location = new System.Drawing.Point(155, 226);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(332, 22);
+            this.txtCelular.Size = new System.Drawing.Size(250, 20);
             this.txtCelular.TabIndex = 74;
             // 
             // txtClub
             // 
-            this.txtClub.Location = new System.Drawing.Point(207, 249);
-            this.txtClub.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClub.Location = new System.Drawing.Point(155, 202);
             this.txtClub.Name = "txtClub";
-            this.txtClub.Size = new System.Drawing.Size(332, 22);
+            this.txtClub.Size = new System.Drawing.Size(250, 20);
             this.txtClub.TabIndex = 73;
             // 
             // txtMaterno
             // 
-            this.txtMaterno.Location = new System.Drawing.Point(207, 217);
-            this.txtMaterno.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaterno.Location = new System.Drawing.Point(155, 176);
             this.txtMaterno.Name = "txtMaterno";
-            this.txtMaterno.Size = new System.Drawing.Size(332, 22);
+            this.txtMaterno.Size = new System.Drawing.Size(250, 20);
             this.txtMaterno.TabIndex = 72;
             // 
             // txtPaterno
             // 
-            this.txtPaterno.Location = new System.Drawing.Point(207, 185);
-            this.txtPaterno.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPaterno.Location = new System.Drawing.Point(155, 150);
             this.txtPaterno.Name = "txtPaterno";
-            this.txtPaterno.Size = new System.Drawing.Size(332, 22);
+            this.txtPaterno.Size = new System.Drawing.Size(250, 20);
             this.txtPaterno.TabIndex = 71;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(207, 153);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Location = new System.Drawing.Point(155, 124);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(332, 22);
+            this.txtNombre.Size = new System.Drawing.Size(250, 20);
             this.txtNombre.TabIndex = 70;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(87, 188);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(65, 153);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 16);
             this.label7.TabIndex = 69;
@@ -321,8 +303,7 @@ namespace WindowsFormsApp3
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(87, 220);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(65, 179);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 16);
             this.label6.TabIndex = 68;
@@ -332,8 +313,7 @@ namespace WindowsFormsApp3
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(87, 252);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(65, 205);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 16);
             this.label5.TabIndex = 67;
@@ -343,8 +323,7 @@ namespace WindowsFormsApp3
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(87, 282);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(65, 229);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 16);
             this.label4.TabIndex = 66;
@@ -354,8 +333,7 @@ namespace WindowsFormsApp3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(87, 314);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(65, 255);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 16);
             this.label3.TabIndex = 65;
@@ -365,8 +343,7 @@ namespace WindowsFormsApp3
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(87, 156);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(65, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 16);
             this.label1.TabIndex = 64;
@@ -375,10 +352,9 @@ namespace WindowsFormsApp3
             // btnBorrar
             // 
             this.btnBorrar.Image = global::WindowsFormsApp3.Properties.Resources.delete;
-            this.btnBorrar.Location = new System.Drawing.Point(811, 570);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBorrar.Location = new System.Drawing.Point(608, 463);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(81, 80);
+            this.btnBorrar.Size = new System.Drawing.Size(61, 65);
             this.btnBorrar.TabIndex = 87;
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
@@ -386,20 +362,19 @@ namespace WindowsFormsApp3
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(885, 464);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(664, 377);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 66);
+            this.pictureBox1.Size = new System.Drawing.Size(49, 54);
             this.pictureBox1.TabIndex = 86;
             this.pictureBox1.TabStop = false;
             // 
             // btnLimpiar
             // 
             this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
-            this.btnLimpiar.Location = new System.Drawing.Point(900, 570);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpiar.Location = new System.Drawing.Point(675, 463);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(81, 80);
+            this.btnLimpiar.Size = new System.Drawing.Size(61, 65);
             this.btnLimpiar.TabIndex = 83;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -409,10 +384,9 @@ namespace WindowsFormsApp3
             // btnCapturar
             // 
             this.btnCapturar.Image = ((System.Drawing.Image)(resources.GetObject("btnCapturar.Image")));
-            this.btnCapturar.Location = new System.Drawing.Point(885, 366);
-            this.btnCapturar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCapturar.Location = new System.Drawing.Point(664, 297);
             this.btnCapturar.Name = "btnCapturar";
-            this.btnCapturar.Size = new System.Drawing.Size(65, 48);
+            this.btnCapturar.Size = new System.Drawing.Size(49, 39);
             this.btnCapturar.TabIndex = 82;
             this.btnCapturar.UseVisualStyleBackColor = true;
             this.btnCapturar.Click += new System.EventHandler(this.btnCapturar_Click_1);
@@ -420,10 +394,9 @@ namespace WindowsFormsApp3
             // BtnModificar
             // 
             this.BtnModificar.Image = ((System.Drawing.Image)(resources.GetObject("BtnModificar.Image")));
-            this.BtnModificar.Location = new System.Drawing.Point(987, 570);
-            this.BtnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnModificar.Location = new System.Drawing.Point(740, 463);
             this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(81, 78);
+            this.BtnModificar.Size = new System.Drawing.Size(61, 63);
             this.BtnModificar.TabIndex = 80;
             this.BtnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnModificar.UseVisualStyleBackColor = true;
@@ -432,10 +405,9 @@ namespace WindowsFormsApp3
             // btnHuella
             // 
             this.btnHuella.Image = ((System.Drawing.Image)(resources.GetObject("btnHuella.Image")));
-            this.btnHuella.Location = new System.Drawing.Point(720, 570);
-            this.btnHuella.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHuella.Location = new System.Drawing.Point(540, 463);
             this.btnHuella.Name = "btnHuella";
-            this.btnHuella.Size = new System.Drawing.Size(81, 80);
+            this.btnHuella.Size = new System.Drawing.Size(61, 65);
             this.btnHuella.TabIndex = 79;
             this.btnHuella.UseVisualStyleBackColor = true;
             this.btnHuella.Click += new System.EventHandler(this.btnHuella_Click);
@@ -443,10 +415,9 @@ namespace WindowsFormsApp3
             // btnCamara
             // 
             this.btnCamara.Image = ((System.Drawing.Image)(resources.GetObject("btnCamara.Image")));
-            this.btnCamara.Location = new System.Drawing.Point(793, 366);
-            this.btnCamara.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCamara.Location = new System.Drawing.Point(595, 297);
             this.btnCamara.Name = "btnCamara";
-            this.btnCamara.Size = new System.Drawing.Size(65, 48);
+            this.btnCamara.Size = new System.Drawing.Size(49, 39);
             this.btnCamara.TabIndex = 77;
             this.btnCamara.UseVisualStyleBackColor = true;
             this.btnCamara.Click += new System.EventHandler(this.btnCamara_Click);
@@ -477,43 +448,54 @@ namespace WindowsFormsApp3
             this.TxtBuscar.Location = new System.Drawing.Point(124, 19);
             this.TxtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(332, 22);
+            this.TxtBuscar.Size = new System.Drawing.Size(332, 20);
             this.TxtBuscar.TabIndex = 0;
             // 
             // picFoto
             // 
             this.picFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picFoto.Location = new System.Drawing.Point(720, 78);
-            this.picFoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picFoto.Location = new System.Drawing.Point(540, 63);
+            this.picFoto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picFoto.Name = "picFoto";
-            this.picFoto.Size = new System.Drawing.Size(325, 281);
+            this.picFoto.Size = new System.Drawing.Size(244, 228);
             this.picFoto.TabIndex = 89;
             this.picFoto.TabStop = false;
             // 
-            // txtbus
+            // label11
             // 
-            this.txtbus.Location = new System.Drawing.Point(180, 92);
-            this.txtbus.Name = "txtbus";
-            this.txtbus.Size = new System.Drawing.Size(237, 22);
-            this.txtbus.TabIndex = 90;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(67, 285);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 16);
+            this.label11.TabIndex = 92;
+            this.label11.Text = "Torneo:";
             // 
-            // btnBusca
+            // cmbTorneo
             // 
-            this.btnBusca.Location = new System.Drawing.Point(461, 90);
-            this.btnBusca.Name = "btnBusca";
-            this.btnBusca.Size = new System.Drawing.Size(75, 23);
-            this.btnBusca.TabIndex = 91;
-            this.btnBusca.Text = "button1";
-            this.btnBusca.UseVisualStyleBackColor = true;
-            this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
+            this.cmbTorneo.FormattingEnabled = true;
+            this.cmbTorneo.Location = new System.Drawing.Point(155, 285);
+            this.cmbTorneo.Name = "cmbTorneo";
+            this.cmbTorneo.Size = new System.Drawing.Size(250, 21);
+            this.cmbTorneo.TabIndex = 93;
+            // 
+            // cmbBusqueda
+            // 
+            this.cmbBusqueda.FormattingEnabled = true;
+            this.cmbBusqueda.Location = new System.Drawing.Point(155, 77);
+            this.cmbBusqueda.Name = "cmbBusqueda";
+            this.cmbBusqueda.Size = new System.Drawing.Size(250, 21);
+            this.cmbBusqueda.TabIndex = 94;
+            this.cmbBusqueda.SelectedIndexChanged += new System.EventHandler(this.cmbBusqueda_SelectedIndexChanged);
             // 
             // Modificar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 663);
-            this.Controls.Add(this.btnBusca);
-            this.Controls.Add(this.txtbus);
+            this.ClientSize = new System.Drawing.Size(812, 539);
+            this.Controls.Add(this.cmbBusqueda);
+            this.Controls.Add(this.cmbTorneo);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.picFoto);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.pictureBox1);
@@ -538,7 +520,7 @@ namespace WindowsFormsApp3
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Modificar";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -596,7 +578,8 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox TxtBuscar;
         private System.Windows.Forms.PictureBox picFoto;
-        private System.Windows.Forms.TextBox txtbus;
-        private System.Windows.Forms.Button btnBusca;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cmbTorneo;
+        private System.Windows.Forms.ComboBox cmbBusqueda;
     }
 }

@@ -8,23 +8,41 @@ namespace WindowsFormsApp3.Modelos
 {
     class Usuario
     {
+
+        Single _FinguerPrint;
+        string _imagen;
+
+
         public string Nombre { get; set; }
 
-        public string Apaterno { get; set; }
+        public string apellidoP { get; set; }
 
-        public string Amaterno { get; set; }
+        public string apellidoM { get; set; }
 
-        public string Club { get; set; }
+        public string club { get; set; }
 
-        public string Celular { get; set; }
+        public string celular { get; set; }
 
-        public string Correo { get; set; }
+        public string correo { get; set; }
 
         public string Fecha { get; set; }
 
         public string CategoriaDescripcion { get; set; }
 
         public string CategoriaTipo { get; set; }
+        public string Torneo { get; set; }
+
+        public Single FinfuerPrint
+        {
+            get { return _FinguerPrint; }
+            set { _FinguerPrint = value; }
+        }
+        public string xImagen
+        {
+            get { return _imagen; }
+            set { _imagen = value; }
+        }
+
 
 
         public Usuario()
@@ -36,11 +54,11 @@ namespace WindowsFormsApp3.Modelos
 
             this.Nombre = Nombre;
             this.CategoriaTipo = CategoriaTipo;
-            this.Club = Club;
-            this.Celular = Celular;
-            this.Correo = Correo;
-            this.Apaterno = Apaterno;
-            this.Amaterno = Amaterno;
+            this.club = Club;
+            this.celular = Celular;
+            this.correo = Correo;
+            this.apellidoP = Apaterno;
+            this.apellidoM = Amaterno;
 
             }
 

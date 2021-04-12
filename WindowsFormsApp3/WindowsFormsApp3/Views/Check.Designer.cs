@@ -80,6 +80,7 @@ namespace WindowsFormsApp3
             this.cbBoxNombre.Name = "cbBoxNombre";
             this.cbBoxNombre.Size = new System.Drawing.Size(349, 21);
             this.cbBoxNombre.TabIndex = 9;
+            this.cbBoxNombre.SelectedIndexChanged += new System.EventHandler(this.cbBoxNombre_SelectedIndexChanged);
             // 
             // txtUsuario
             // 

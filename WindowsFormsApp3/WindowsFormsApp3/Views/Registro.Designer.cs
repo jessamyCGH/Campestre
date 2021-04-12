@@ -74,7 +74,7 @@ namespace WindowsFormsApp3
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.lbltTitulo);
             this.panel1.Location = new System.Drawing.Point(0, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(845, 56);
             this.panel1.TabIndex = 61;
@@ -83,7 +83,7 @@ namespace WindowsFormsApp3
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel2.Location = new System.Drawing.Point(2, 48);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(843, 8);
             this.panel2.TabIndex = 39;
@@ -130,7 +130,7 @@ namespace WindowsFormsApp3
             this.cmbGolf.Enabled = false;
             this.cmbGolf.FormattingEnabled = true;
             this.cmbGolf.Location = new System.Drawing.Point(87, 115);
-            this.cmbGolf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbGolf.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGolf.Name = "cmbGolf";
             this.cmbGolf.Size = new System.Drawing.Size(123, 21);
             this.cmbGolf.TabIndex = 41;
@@ -150,7 +150,7 @@ namespace WindowsFormsApp3
             this.cmbTenis.Enabled = false;
             this.cmbTenis.FormattingEnabled = true;
             this.cmbTenis.Location = new System.Drawing.Point(87, 82);
-            this.cmbTenis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTenis.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTenis.Name = "cmbTenis";
             this.cmbTenis.Size = new System.Drawing.Size(123, 21);
             this.cmbTenis.TabIndex = 4;
@@ -199,7 +199,7 @@ namespace WindowsFormsApp3
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(146, 277);
+            this.txtCorreo.Location = new System.Drawing.Point(146, 278);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(250, 20);
             this.txtCorreo.TabIndex = 50;
@@ -213,7 +213,7 @@ namespace WindowsFormsApp3
             // 
             // txtClub
             // 
-            this.txtClub.Location = new System.Drawing.Point(146, 197);
+            this.txtClub.Location = new System.Drawing.Point(145, 195);
             this.txtClub.Name = "txtClub";
             this.txtClub.Size = new System.Drawing.Size(250, 20);
             this.txtClub.TabIndex = 48;
@@ -263,7 +263,7 @@ namespace WindowsFormsApp3
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(56, 200);
+            this.label5.Location = new System.Drawing.Point(57, 195);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 16);
             this.label5.TabIndex = 42;
@@ -283,7 +283,7 @@ namespace WindowsFormsApp3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(56, 282);
+            this.label3.Location = new System.Drawing.Point(60, 279);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 16);
             this.label3.TabIndex = 40;
@@ -303,7 +303,7 @@ namespace WindowsFormsApp3
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(640, 356);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(49, 54);
             this.pictureBox1.TabIndex = 63;
@@ -368,7 +368,7 @@ namespace WindowsFormsApp3
             this.picFoto.Image = ((System.Drawing.Image)(resources.GetObject("picFoto.Image")));
             this.picFoto.InitialImage = null;
             this.picFoto.Location = new System.Drawing.Point(563, 76);
-            this.picFoto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picFoto.Margin = new System.Windows.Forms.Padding(2);
             this.picFoto.Name = "picFoto";
             this.picFoto.Size = new System.Drawing.Size(260, 225);
             this.picFoto.TabIndex = 64;
@@ -421,7 +421,7 @@ namespace WindowsFormsApp3
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Registro";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);

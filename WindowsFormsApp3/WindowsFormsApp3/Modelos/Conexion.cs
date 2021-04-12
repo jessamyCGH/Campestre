@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Collections.ObjectModel;
 using WindowsFormsApp3.Modelos;
+using System.Windows.Forms;
+using System.Data;
 
 namespace WindowsFormsApp3
 {
@@ -116,7 +118,8 @@ namespace WindowsFormsApp3
             {
                 conectarBDT.Close();
                 return true;
-            }else
+            }
+            else
             {
                 conectarBDT.Close();
                 return false;
@@ -133,7 +136,7 @@ namespace WindowsFormsApp3
             command.Parameters.AddWithValue("id_user", id);
             command.Parameters.AddWithValue("fecha", DateTime.Now);
 
-            command.ExecuteReader(); 
+            command.ExecuteReader();
             conectarBDT.Close();
         }
 
@@ -366,6 +369,67 @@ namespace WindowsFormsApp3
 
         #endregion
 
+
+        public void insertar(string nombre, string apellidoP, string apellidoM, string correo, string tel, string club, int id_cat, string huella, string imagen, int id_torneo)
+        {
+            cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
+            conectarBDT.ConnectionString = cadena;
+            conectarBDT.Open();
+
+            // SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Usuarios]([nombre],[apellidoP],[apellidoM],[correo],[tel],[club],[id_cat],[huella],[imagen],[id_torneo])VALUES(@nombre, @apellidoP, @apellidoM, @correo, @tel, @club, @id_cat, @huella, @imagen, @id_torneo, @fecha_registro)", conectarBDT);
+
+            SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Usuarios]([nombre],[apellidoP],[apellidoM],[correo],[tel],[club],[id_cat],[huella],[imagen],[id_torneo])VALUES(@nombre, @apellidoP, @apellidoM, @correo, @tel, @club, @id_cat, @huella, @imagen, @id_torneo, @fecha_registro)", conectarBDT);
+            command.Parameters.AddWithValue("nombre", nombre);
+            command.Parameters.AddWithValue("apellidoP", apellidoP);
+            command.Parameters.AddWithValue("apellidoM", apellidoM);
+            command.Parameters.AddWithValue("correo", correo);
+            command.Parameters.AddWithValue("tel", tel);
+            command.Parameters.AddWithValue("club", club);
+            command.Parameters.AddWithValue("id_cat", id_cat);
+            command.Parameters.AddWithValue("huella", null);
+            command.Parameters.AddWithValue("imagen", null);
+            command.Parameters.AddWithValue("id_torneo", id_torneo);
+            command.Parameters.AddWithValue("fecha_registro", DateTime.Now);
+
+            try
+            {
+                command.ExecuteReader();
+                conectarBDT.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error" + ex.Message);
+            }
+
+        }
+
+        public bool Buscar(Usuario usuario)
+        {
+            cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
+            conectarBDT.ConnectionString = cadena;
+            conectarBDT.Open();
+
+            SqlCommand command = new SqlCommand("SELECT nombre FROM Clausura WHERE nombre = @nombre", conectarBDT);
+            command.Parameters.AddWithValue("nombre", usuario.Nombre);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+
+            if (reader.HasRows)
+            {
+                conectarBDT.Close();
+                return true;
+            }
+            else
+            {
+                conectarBDT.Close();
+                return false;
+            }
+        }
+
+
+
+
         public ObservableCollection<string> getAllNamesUsers()
         {
             cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
@@ -385,7 +449,7 @@ namespace WindowsFormsApp3
                 nombre += (string)reader["nombre"] + " ";
                 nombre += (string)reader["apellidoP"] + " ";
                 nombre += (string)reader["apellidoM"];
-                
+
                 nombres.Add(nombre);
             }
 
@@ -393,6 +457,8 @@ namespace WindowsFormsApp3
 
             return nombres;
         }
+
+        #region categorias
 
         public ObservableCollection<string> obtenerCategoriasGolf()
         {
@@ -412,7 +478,7 @@ namespace WindowsFormsApp3
                 {
                     categorias.Add((string)reader["descripcion"]);
                 }
-            } 
+            }
 
             conectarBDT.Close();
 
@@ -464,9 +530,49 @@ namespace WindowsFormsApp3
                 torneos.Add((string)reader["descripcion"]);
             }
 
-             conectarBDT.Close();
+            conectarBDT.Close();
 
             return torneos;
         }
+        #endregion
+
+
+        public void Insertar(string nombre, string apellidoP, string apellidoM, string correo, string tel, string club, int id_cat, string huella, string imagen, int id_torneo)
+        { 
+            cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
+            conectarBDT.ConnectionString = cadena;
+            conectarBDT.Open();
+
+
+            //SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Usuario]([nombre],[apellidoP],[apellidoM],[correo],[tel],[club],[id_cat],[huella],[imagen],[id_torneo])VALUES(@nombre, @apellidoP, @apellidoM,@correo, @tel, @club,@id_cat,@huella,@imagen, @id_torneo)", conectarBDT);
+            SqlCommand command = new SqlCommand("sp_insertar");
+            try
+            {
+                command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@nombre", nombre);
+            command.Parameters.AddWithValue("@apellidoP", apellidoP);
+            command.Parameters.AddWithValue("@apellidoM", apellidoM);
+            command.Parameters.AddWithValue("@correo", correo);
+            command.Parameters.AddWithValue("@tel", tel);
+            command.Parameters.AddWithValue("@club", club);
+            command.Parameters.AddWithValue("@id_cat", id_cat);
+            command.Parameters.AddWithValue("@huella", huella);
+            command.Parameters.AddWithValue("@imagen", imagen);
+            command.Parameters.AddWithValue("@id_torneo", id_torneo);
+            command.Parameters.AddWithValue("@fecha_registro", DateTime.Now);
+
+
+           
+                command.ExecuteNonQuery();
+                conectarBDT.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("error " + ex.Message);
+            }
+            conectarBDT.Close();
+
+        }
+
     }
 }

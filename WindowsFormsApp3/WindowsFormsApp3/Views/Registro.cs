@@ -23,7 +23,7 @@ namespace WindowsFormsApp3
 
 
         private bool existenDispositivos = false;
-        private bool fotografiaHecha = false;
+       private bool fotografiaHecha = false;
         private FilterInfoCollection dispositivosDeVideo;
         private VideoCaptureDevice fuenteDeVideo = null;
         public PictureBox pbFotoSocio = null;
@@ -35,9 +35,12 @@ namespace WindowsFormsApp3
         ObservableCollection<string> TipoTenis = new ObservableCollection<string>();
         ObservableCollection<string> Torneo = new ObservableCollection<string>();
 
-
-        SqlConnection con = new SqlConnection(@"Data Source= DESKTOP-JH5TK9P;Initial Catalog=PRUEBA; Integrated Security= True");
         Menu MenuAnterior;
+
+        int id_cat ;
+        int id_torneo;
+        string huella =  null;
+        string imagen = null;
 
         public Registro( Menu menu)
         {
@@ -110,10 +113,12 @@ namespace WindowsFormsApp3
         //Se registran los usuarios y se verifica si todos los campos este completos y correctos
         private void btnRegistar_Click_1(object sender, EventArgs e)
         {
-            //con.Open();
-            //SqlCommand cmd = con.CreateCommand();
-            //cmd.CommandType = CommandType.Text;
-            //cmd.CommandText = "insert INTO dbo.Usuario VALUES ('" + txtNombre.Text + "', '" + txtClub.Text + "', '" + txtCelular.Text + "',  '" + txtCorreo.Text + "', '" + txtPaterno.Text + "', '" + txtMaterno.Text + "' )";
+            conexion.conectarBDT.Open();
+            SqlConnection con = new SqlConnection();
+            con.Open();
+
+            SqlCommand command = new SqlCommand ("insert INTO dbo.Usuarios VALUES ('" + txtNombre.Text + "', '" + txtPaterno.Text + "', '" + txtMaterno.Text + "', '" + txtClub.Text + "', '" + txtCelular.Text + "',  '" + txtCorreo.Text + "', '" +cmbTenis.SelectedItem + "', '" + cmbTorneo.SelectedItem+ "' )");
+           
             // huella();
 
             if (!string.IsNullOrEmpty(txtNombre.Text))
@@ -121,20 +126,38 @@ namespace WindowsFormsApp3
                 usuario.Nombre = txtNombre.Text;
                 if (!string.IsNullOrEmpty(txtPaterno.Text))
                 {
-                    usuario.Apaterno = txtPaterno.Text;
+                    usuario.apellidoP = txtPaterno.Text;
                     if (!string.IsNullOrEmpty(txtMaterno.Text))
                     {
-                        usuario.Amaterno = txtMaterno.Text;
+                        usuario.apellidoM = txtMaterno.Text;
                         if (!string.IsNullOrEmpty(txtClub.Text))
                         {
-                            usuario.Club = txtClub.Text;
+                            usuario.club = txtClub.Text;
                             if (!string.IsNullOrEmpty(txtCelular.Text) && txtCelular.Text.Length == 10)
                             {
-                                usuario.Celular = txtCelular.Text;
+                                usuario.celular = txtCelular.Text;
                                 if (!string.IsNullOrEmpty(txtCorreo.Text))
                                 {
-                                    usuario.Correo = txtCorreo.Text;
+                                    usuario.correo = txtCorreo.Text;
                                     usuario.Fecha = DateTime.Now + "";
+
+                                // conexion.Insertar(txtNombre.Text, txtPaterno.Text, txtMaterno.Text, txtCorreo.Text,txtCelular.Text, txtCorreo.Text, cmbTenis.SelectedIndex, huella, imagen,cmbTorneo.SelectedIndex );
+
+                                     /* usuario.Nombre = txtNombre.Text.;
+                                       usuario.apellidoP = txtPaterno.Text;
+                                       usuario.apellidoM = txtMaterno.Text;
+                                       usuario.club = txtClub.Text;
+                                       usuario.celular = txtClub.Text;
+                                       usuario.correo = txtCorreo.Text;
+                                       usuario.CategoriaDescripcion = Convert.ToString(cmbTenis);
+                                       usuario.Torneo = Convert.ToString(cmbTorneo);*/
+
+                                     
+                                   
+
+
+                                   
+
 
                                 }
                                 else
@@ -167,8 +190,11 @@ namespace WindowsFormsApp3
                 MessageBox.Show("El nombre ingresado es incorrecto");
             }
 
+            con.ExecuteNonQuery();
 
             MessageBox.Show("Se Inserto Corectamente");
+            conexion.conectarBDT.Close();
+
         }
         
         //Desahbilita/ hablita el chkTenis, dependiendo del evento recibido
