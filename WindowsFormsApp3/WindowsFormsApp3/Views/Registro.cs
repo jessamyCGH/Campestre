@@ -8,6 +8,8 @@ using System.Collections.ObjectModel;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using DarrenLee.Media;
+using System.Data.Common;
+
 
 namespace WindowsFormsApp3
 {
@@ -18,7 +20,7 @@ namespace WindowsFormsApp3
         Usuario usuario = new Usuario();
         Conexion conexion = new Conexion();
 
-        private HuellaFrom Enroller;
+        private EnrollmentForm Enroller;
        // private VerificationForm Verifier;
 
 
@@ -37,8 +39,7 @@ namespace WindowsFormsApp3
 
         Menu MenuAnterior;
 
-        int id_cat ;
-        int id_torneo;
+       // int id_cat ;
         string huella =  null;
         string imagen = null;
 
@@ -47,7 +48,7 @@ namespace WindowsFormsApp3
 
             InitializeComponent();
             BuscarDispositivos();
-
+           
             try
             {
                // camara = new Camera();
@@ -109,39 +110,37 @@ namespace WindowsFormsApp3
             MessageBox.Show(DateTime.Now + " ");
         }
 
-        
+
         //Se registran los usuarios y se verifica si todos los campos este completos y correctos
-        private void btnRegistar_Click_1(object sender, EventArgs e)
-        {
-            conexion.conectarBDT.Open();
-            SqlConnection con = new SqlConnection();
-            con.Open();
+        /* private void btnRegistar_Click_1(object sender, EventArgs e)
+         {
+             int id_cat = Convert.ToInt32(cmbTenis.SelectedValue);
+             int id_torneo = Convert.ToInt32(cmbTorneo.SelectedValue);
 
-            SqlCommand command = new SqlCommand ("insert INTO dbo.Usuarios VALUES ('" + txtNombre.Text + "', '" + txtPaterno.Text + "', '" + txtMaterno.Text + "', '" + txtClub.Text + "', '" + txtCelular.Text + "',  '" + txtCorreo.Text + "', '" +cmbTenis.SelectedItem + "', '" + cmbTorneo.SelectedItem+ "' )");
-           
-            // huella();
 
-            if (!string.IsNullOrEmpty(txtNombre.Text))
-            {
-                usuario.Nombre = txtNombre.Text;
-                if (!string.IsNullOrEmpty(txtPaterno.Text))
-                {
-                    usuario.apellidoP = txtPaterno.Text;
-                    if (!string.IsNullOrEmpty(txtMaterno.Text))
-                    {
-                        usuario.apellidoM = txtMaterno.Text;
-                        if (!string.IsNullOrEmpty(txtClub.Text))
-                        {
-                            usuario.club = txtClub.Text;
-                            if (!string.IsNullOrEmpty(txtCelular.Text) && txtCelular.Text.Length == 10)
-                            {
-                                usuario.celular = txtCelular.Text;
-                                if (!string.IsNullOrEmpty(txtCorreo.Text))
-                                {
-                                    usuario.correo = txtCorreo.Text;
-                                    usuario.Fecha = DateTime.Now + "";
+             // huella();
 
-                                // conexion.Insertar(txtNombre.Text, txtPaterno.Text, txtMaterno.Text, txtCorreo.Text,txtCelular.Text, txtCorreo.Text, cmbTenis.SelectedIndex, huella, imagen,cmbTorneo.SelectedIndex );
+             if (!string.IsNullOrEmpty(txtNombre.Text))
+             {
+                 usuario.nombre = txtNombre.Text;
+                 if (!string.IsNullOrEmpty(txtPaterno.Text))
+                 {
+                     usuario.apellidoP = txtPaterno.Text;
+                     if (!string.IsNullOrEmpty(txtMaterno.Text))
+                     {
+                         usuario.apellidoM = txtMaterno.Text;
+                         if (!string.IsNullOrEmpty(txtClub.Text))
+                         {
+                             usuario.club = txtClub.Text;
+                             if (!string.IsNullOrEmpty(txtCelular.Text) && txtCelular.Text.Length == 10)
+                             {
+                                 usuario.tel = txtCelular.Text;
+                                 if (!string.IsNullOrEmpty(txtCorreo.Text))
+                                 {
+                                     usuario.correo = txtCorreo.Text;
+                                     usuario.Fecha = DateTime.Now + "";
+
+                                     // conexion.Insertar(txtNombre.Text, txtPaterno.Text, txtMaterno.Text, txtCorreo.Text,txtCelular.Text, txtCorreo.Text, cmbTenis.SelectedIndex, huella, imagen,cmbTorneo.SelectedIndex );
 
                                      /* usuario.Nombre = txtNombre.Text.;
                                        usuario.apellidoP = txtPaterno.Text;
@@ -150,52 +149,233 @@ namespace WindowsFormsApp3
                                        usuario.celular = txtClub.Text;
                                        usuario.correo = txtCorreo.Text;
                                        usuario.CategoriaDescripcion = Convert.ToString(cmbTenis);
-                                       usuario.Torneo = Convert.ToString(cmbTorneo);*/
+                                       usuario.Torneo = Convert.ToString(cmbTorneo);
+                                     try { 
 
-                                     
-                                   
+                                     usuario.nombre = txtNombre.Text;
+                                     usuario.apellidoP = txtPaterno.Text;
+                                     usuario.apellidoM = txtMaterno.Text;
+                                     usuario.correo = txtCorreo.Text;
+                                     usuario.tel = txtCelular.Text;
+                                     usuario.club = txtClub.Text;
+                                     usuario.huella = null;
+
+                                     int Id = Conexion.Alta(usuario);
 
 
-                                   
+                                     if (Id > 0)
+                                     {
+                                         MessageBox.Show("Empleado guardado correctamente", "Guardar");
+
+                                         txtNombre.Text = "";
+                                         txtPaterno.Text = "";
+                                         txtMaterno.Text = "";
+                                         txtCorreo.Text = "";
+                                         txtCelular.Text = "";
+                                             txtClub.Text = "";
+
+                                        // dgEmpleados.DataContext = DatoEmpleado.MuestraEmpleados();
+
+                                     }
+
+                                 }
+             catch (Exception ex)
+                                 {
+                                     MessageBox.Show("No fue posible guardar el empleado: " + ex.Message, "Error en Guardar");
+                                 }
+                             }
 
 
-                                }
-                                else
-                                {
-                                    MessageBox.Show("El correo ingresado es incorrecto");
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("El celular ingresado es incorrecto");
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("El club ingresado es incorrecto");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("El apellido materno ingresado es incorrecto");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("El apellido paterno ingresado es incorrecto");
-                }
-            }
-            else
+
+
+
+                                 else
+                                 {
+                                     MessageBox.Show("El correo ingresado es incorrecto");
+                                 }
+                             }
+                             else
+                             {
+                                 MessageBox.Show("El celular ingresado es incorrecto");
+                             }
+                         }
+                         else
+                         {
+                             MessageBox.Show("El club ingresado es incorrecto");
+                         }
+                     }
+                     else
+                     {
+                         MessageBox.Show("El apellido materno ingresado es incorrecto");
+                     }
+                 }
+                 else
+                 {
+                     MessageBox.Show("El apellido paterno ingresado es incorrecto");
+                 }
+             }
+             else
+             {
+                 MessageBox.Show("El nombre ingresado es incorrecto");
+             }
+
+
+
+
+             MessageBox.Show("Se Inserto Corectamente");
+             conexion.conectarBDT.Close();
+
+          if(tbNombre.Text =="")
             {
-                MessageBox.Show("El nombre ingresado es incorrecto");
+                 MessageBox.Show("El campo Nombre debe ser especificado", "Error");
+                 return;
             }
 
-            con.ExecuteNonQuery();
+             if (tbApellidos.Text == "")
+             {
+                 MessageBox.Show("El campo Apellidos debe ser especificado", "Error");
+                 return;
+             }
 
-            MessageBox.Show("Se Inserto Corectamente");
-            conexion.conectarBDT.Close();
+             if (tbNumero.Text == "")
+             {
+                 MessageBox.Show("El campo Número de empleado debe ser especificado", "Error");
+                 return;
+             }
 
+             if (Template == null)
+             {
+                 MessageBox.Show("La huella del empleado debe ser capturada", "Error");
+                 return;
+             }
+
+             try
+             {
+                 Empleado empleado = new Empleado();
+                 empleado.Nombre = tbNombre.Text;
+                 empleado.Apellidos = tbApellidos.Text;
+                 empleado.Numero = tbNumero.Text;
+                 empleado.Foto = tbUrlFoto.Text;
+                 empleado.Huella = Template.Bytes;
+
+                 string destino = @"C:\Checador\";
+
+               //  string recurso = imgFoto.Source.ToString().Replace("file:///", "");
+
+               //  File.Copy(recurso, destino + tbUrlFoto.Text, true);
+
+                 int id = DatoEmpleado.AltaEmpleado(empleado);
+
+                 if(id > 0)
+                 {
+                     MessageBox.Show("Empleado guardado correctamente", "Guardar");
+
+                     tbNombre.Text = "";
+                     tbApellidos.Text = "";
+                     tbNumero.Text = "";
+                     tbUrlFoto.Text = "";
+                     imgFoto.Source = null;
+                     dgEmpleados.DataContext = DatoEmpleado.MuestraEmpleados();
+
+                 }
+
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show("No fue posible guardar el empleado: " + ex.Message, "Error en Guardar");
+             }
+         }
+
+
+         }*/
+        private void btnRegistar_Click_1(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "")
+            {
+                MessageBox.Show("El campo Nombre debe ser especificado", "Error");
+                return;
+            }
+
+            if (txtPaterno.Text == "")
+            {
+                MessageBox.Show("El campo apellido Paterno debe de ser llenado", "Error");
+                return;
+            }
+
+            if (txtMaterno.Text == "")
+            {
+                MessageBox.Show("El campo Número de empleado debe ser especificado", "Error");
+                return;
+            }
+            if (txtCorreo.Text == "")
+            {
+                MessageBox.Show("El campo Número de empleado debe ser especificado", "Error");
+                return;
+            }
+            if (txtClub.Text == "")
+            {
+                MessageBox.Show("El campo Número de empleado debe ser especificado", "Error");
+                return;
+            }
+            if (txtCelular.Text == "")
+            {
+                MessageBox.Show("El campo Número de empleado debe ser especificado", "Error");
+                return;
+            }
+
+
+            if (Template == null)
+            {
+                MessageBox.Show("La huella del empleado debe ser capturada", "Error");
+                return;
+            }
+
+            try
+            {
+                Usuario usuario = new Usuario();
+                usuario.nombre = txtNombre.Text;
+                usuario.apellidoP = txtPaterno.Text;
+                usuario.apellidoM = txtMaterno.Text;
+                usuario.correo = txtCorreo.Text;
+                usuario.club = txtClub.Text;
+                usuario.tel = txtCelular.Text;
+                usuario.huella = Template.Bytes;
+
+                string destino = @"C:\Checador\";
+
+                //  string recurso = imgFoto.Source.ToString().Replace("file:///", "");
+
+                //  File.Copy(recurso, destino + tbUrlFoto.Text, true);
+
+                int id = Conexion.Alta(usuario);
+
+                if (id > 0)
+                {
+                    MessageBox.Show("Empleado guardado correctamente", "Guardar");
+
+                    txtNombre.Text = "";
+                    txtPaterno.Text = "";
+                    txtMaterno.Text = "";
+                    txtCorreo.Text = "";
+                    txtCelular.Text = "";
+                    txtClub.Text = "";
+                    
+                    
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No fue posible guardar el empleado: " + ex.Message, "Error en Guardar");
+            }
         }
+
+         
+
+
+
+
         
         //Desahbilita/ hablita el chkTenis, dependiendo del evento recibido
 
@@ -311,27 +491,47 @@ namespace WindowsFormsApp3
         private void btnHuella_Click(object sender, EventArgs e)
         {
 
+            EnrollmentForm Enroller = new EnrollmentForm();
+            Enroller.OnTemplate += this.OnTemplate;
+            Enroller.ShowDialog();
+
             // ExchangeData(true); 
             // transfer values from the main form to the data object
-           
-             Enroller.ShowDialog();	// process enrollment*/
-           
+
+            //  Enroller.ShowDialog();	// process enrollment*/
+
+        }
+        private void OnTemplate(DPFP.Template template)
+        {
+            this.Invoke(new Function(delegate ()
+            {
+                Template = template;
+                //VerifyButton.Enabled = SaveButton.Enabled = (Template != null);
+                if (Template != null)
+                {
+                    MessageBox.Show("La huella ha sido capturada correctamente", "Capturar huella.");
+                    //imgVerHuella.Visibility = Visibility.Visible;
+                }
+                else
+                    MessageBox.Show("The fingerprint template is not valid. Repeat fingerprint enrollment.", "Fingerprint Enrollment");
+            }));
         }
 
+        private DPFP.Template Template;
 
         // Simple dialog data exchange (DDX) implementation.
-       /* private void ExchangeData(bool read)
-        {
-            if (read)
-            {   // read values from the form's controls to the data object
-                
-                Data.Update();
-            }
-            else
-            {   // read valuse from the data object to the form's controls
-             
-            }
-        }*/
+        /* private void ExchangeData(bool read)
+         {
+             if (read)
+             {   // read values from the form's controls to the data object
+
+                 Data.Update();
+             }
+             else
+             {   // read valuse from the data object to the form's controls
+
+             }
+         }*/
 
 
     }

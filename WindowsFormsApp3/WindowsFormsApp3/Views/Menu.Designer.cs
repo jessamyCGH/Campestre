@@ -1,6 +1,7 @@
 ﻿
 namespace WindowsFormsApp3
 {
+    delegate void Function();
     partial class Menu
     {
         /// <summary>

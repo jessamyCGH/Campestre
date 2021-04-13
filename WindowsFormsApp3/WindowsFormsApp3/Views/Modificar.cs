@@ -57,6 +57,10 @@ namespace WindowsFormsApp3
         private void BtnModificar_Click(object sender, EventArgs e)
         {
 
+            int id_cat = Convert.ToInt32(cmbTenis.SelectedValue);
+            int id_torneo = Convert.ToInt32(cmbTorneo.SelectedValue);
+
+            conexion.actualizar(txtNombre.Text, txtPaterno.Text, txtMaterno.Text, txtCorreo.Text, txtCelular.Text, txtClub.Text, id_cat, id_torneo);
          /*   cadena.Open();
            
          
@@ -187,6 +191,15 @@ namespace WindowsFormsApp3
         private void cmbBusqueda_SelectedIndexChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /*int id_cat = Cteonvert.ToInt32(cmbTenis.SelectedValue);
+            int id_torneo = Convert.ToInt32(cmbTorneo.SelectedValue);
+            conexion.buscar(txtNombre.Text, txtPaterno.Text, txtMaterno.Text, txtCorreo.Text, txtCelular.Text, txtClub.Text, id_cat, id_torneo);*/
+
+            
         }
     }
 

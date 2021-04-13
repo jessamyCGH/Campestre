@@ -72,6 +72,7 @@ namespace WindowsFormsApp3
             this.label11 = new System.Windows.Forms.Label();
             this.cmbTorneo = new System.Windows.Forms.ComboBox();
             this.cmbBusqueda = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -84,7 +85,7 @@ namespace WindowsFormsApp3
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.lbltTitulo);
             this.panel1.Location = new System.Drawing.Point(0, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(795, 56);
             this.panel1.TabIndex = 84;
@@ -93,7 +94,7 @@ namespace WindowsFormsApp3
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel2.Location = new System.Drawing.Point(2, 48);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(794, 8);
             this.panel2.TabIndex = 39;
@@ -140,7 +141,7 @@ namespace WindowsFormsApp3
             this.cmbGolf.Enabled = false;
             this.cmbGolf.FormattingEnabled = true;
             this.cmbGolf.Location = new System.Drawing.Point(87, 115);
-            this.cmbGolf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbGolf.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGolf.Name = "cmbGolf";
             this.cmbGolf.Size = new System.Drawing.Size(123, 21);
             this.cmbGolf.TabIndex = 41;
@@ -160,7 +161,7 @@ namespace WindowsFormsApp3
             this.cmbTenis.Enabled = false;
             this.cmbTenis.FormattingEnabled = true;
             this.cmbTenis.Location = new System.Drawing.Point(87, 82);
-            this.cmbTenis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTenis.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTenis.Name = "cmbTenis";
             this.cmbTenis.Size = new System.Drawing.Size(123, 21);
             this.cmbTenis.TabIndex = 4;
@@ -363,7 +364,7 @@ namespace WindowsFormsApp3
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(664, 377);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(49, 54);
             this.pictureBox1.TabIndex = 86;
@@ -455,7 +456,7 @@ namespace WindowsFormsApp3
             // 
             this.picFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picFoto.Location = new System.Drawing.Point(540, 63);
-            this.picFoto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picFoto.Margin = new System.Windows.Forms.Padding(2);
             this.picFoto.Name = "picFoto";
             this.picFoto.Size = new System.Drawing.Size(244, 228);
             this.picFoto.TabIndex = 89;
@@ -488,11 +489,22 @@ namespace WindowsFormsApp3
             this.cmbBusqueda.TabIndex = 94;
             this.cmbBusqueda.SelectedIndexChanged += new System.EventHandler(this.cmbBusqueda_SelectedIndexChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(445, 77);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 95;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Modificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 539);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cmbBusqueda);
             this.Controls.Add(this.cmbTorneo);
             this.Controls.Add(this.label11);
@@ -520,7 +532,7 @@ namespace WindowsFormsApp3
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Modificar";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -581,5 +593,6 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbTorneo;
         private System.Windows.Forms.ComboBox cmbBusqueda;
+        private System.Windows.Forms.Button button1;
     }
 }

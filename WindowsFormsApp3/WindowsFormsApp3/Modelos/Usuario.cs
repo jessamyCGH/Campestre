@@ -13,7 +13,7 @@ namespace WindowsFormsApp3.Modelos
         string _imagen;
 
 
-        public string Nombre { get; set; }
+        public string nombre { get; set; }
 
         public string apellidoP { get; set; }
 
@@ -21,7 +21,7 @@ namespace WindowsFormsApp3.Modelos
 
         public string club { get; set; }
 
-        public string celular { get; set; }
+        public string tel { get; set; }
 
         public string correo { get; set; }
 
@@ -32,16 +32,7 @@ namespace WindowsFormsApp3.Modelos
         public string CategoriaTipo { get; set; }
         public string Torneo { get; set; }
 
-        public Single FinfuerPrint
-        {
-            get { return _FinguerPrint; }
-            set { _FinguerPrint = value; }
-        }
-        public string xImagen
-        {
-            get { return _imagen; }
-            set { _imagen = value; }
-        }
+       public byte [] huella { get; set; }
 
 
 
@@ -49,13 +40,13 @@ namespace WindowsFormsApp3.Modelos
         {
 
         }
-        public Usuario (string Nombre, String CategoriaTipo, string Club, string Celular, string Correo, string Apaterno, string Amaterno)
+        public Usuario (string Nombre, String CategoriaTipo, string Club, string tel, string Correo, string Apaterno, string Amaterno)
             {
 
             this.Nombre = Nombre;
             this.CategoriaTipo = CategoriaTipo;
             this.club = Club;
-            this.celular = Celular;
+            this.tel = tel;
             this.correo = Correo;
             this.apellidoP = Apaterno;
             this.apellidoM = Amaterno;
