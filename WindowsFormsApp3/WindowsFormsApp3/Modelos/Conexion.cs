@@ -352,65 +352,6 @@ namespace WindowsFormsApp3
 
         #endregion
 
-        public void insertar (string nombre, string apellidoP, string apellidoM, string correo, string tel, string club, int id_cat, int id_torneo)
-        {
-            cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
-            conectarBDT.ConnectionString = cadena;
-            conectarBDT.Open();
-
-            SqlCommand command = new SqlCommand("insert INTO [dbo].[Tabla]([nombre],[apellidoP],[apellidoM],[correo],[tel],[club],[id_cat],[id_torneo])VALUES(@nombre, @apellidoP, @apellidoM,@correo,@tel,@club, @id_cat, @id_torneo)", conectarBDT);
-            command.Parameters.AddWithValue("nombre", nombre);
-            command.Parameters.AddWithValue("apellidoP", apellidoP);
-            command.Parameters.AddWithValue("apellidoM", apellidoM);
-            command.Parameters.AddWithValue("correo", correo);
-            command.Parameters.AddWithValue("tel", tel);
-            command.Parameters.AddWithValue("club", club);
-            command.Parameters.AddWithValue("id_cat", id_cat);
-            command.Parameters.AddWithValue("id_torneo", id_torneo);
-
-            command.ExecuteNonQuery();
-            conectarBDT.Close();
-        }
-
-        public void buscar(string nombre, string apellidoP, string apellidoM, string correo, string tel, string club, int id_cat, int id_torneo)
-        {
-            cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
-            conectarBDT.ConnectionString = cadena;
-            conectarBDT.Open();
-
-            SqlCommand command = new SqlCommand("select * from [dbo].[Tabla])", conectarBDT);
-            command.Parameters.AddWithValue("nombre", nombre);
-            command.Parameters.AddWithValue("apellidoP", apellidoP);
-            command.Parameters.AddWithValue("apellidoM", apellidoM);
-            command.Parameters.AddWithValue("correo", correo);
-            command.Parameters.AddWithValue("tel", tel);
-            command.Parameters.AddWithValue("club", club);
-            command.Parameters.AddWithValue("id_cat", id_cat);
-            command.Parameters.AddWithValue("id_torneo", id_torneo);
-
-            command.ExecuteReader();
-            conectarBDT.Close();
-        }
-
-        public void actualizar(string nombre, string apellidoP, string apellidoM, string correo, string tel, string club, int id_cat, int id_torneo)
-        {
-            cadena = cadena.Replace("{nombrePC}", Environment.MachineName);
-            conectarBDT.ConnectionString = cadena;
-            conectarBDT.Open();
-
-            SqlCommand command = new SqlCommand("update [dbo].[Tabla] set ([nombre],[apellidoP],[apellidoM],[correo],[tel],[club],[id_cat],[id_torneo]) = @count WHERE nombre = @nombre, apellidoP = @apellifoP, @apellidoM", conectarBDT);
-            command.Parameters.AddWithValue("nombre", nombre);
-            command.Parameters.AddWithValue("apellidoP", apellidoP);
-            command.Parameters.AddWithValue("apellidoM", apellidoM);
-            command.Parameters.AddWithValue("correo", correo);
-            command.Parameters.AddWithValue("tel", tel);
-            command.Parameters.AddWithValue("club", club);
-            command.Parameters.AddWithValue("id_cat", id_cat);
-            command.Parameters.AddWithValue("id_torneo", id_torneo);
-
-            command.ExecuteNonQuery();
-            conectarBDT.Close();
-        }
 
         public ObservableCollection<string> getAllNamesUsers()
         {
@@ -547,46 +488,7 @@ namespace WindowsFormsApp3
 
 
 
-        public static int Alta(Usuario usuario)
-        {
-
-            int res = 0;
-
-            try
-            {
-                using (var conn = new SqlConnection("Data Source= {nombrePC};Initial Catalog=TorneoAnual; Integrated Security= True"))
-                {
-                    conn.Open();
-
-                    using (var command = conn.CreateCommand())
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.CommandText = "INSERTAR";
-                        command.Parameters.AddWithValue("@Nombre", usuario.nombre);
-                        command.Parameters.AddWithValue("@apellidoP", usuario.apellidoP);
-                        command.Parameters.AddWithValue("@apellidoM", usuario.apellidoM);
-                        command.Parameters.AddWithValue("@correo", usuario.correo);
-                        command.Parameters.AddWithValue("@tel", usuario.tel);
-                        command.Parameters.AddWithValue("@club", usuario.club);
-
-
-                        SqlParameter param = new SqlParameter("Id", SqlDbType.Int);
-                        param.Value = 0;
-                        param.Direction = ParameterDirection.Output;
-                        command.Parameters.Add(param);
-
-                        res = command.ExecuteNonQuery();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al dar de alta al empleado: " + ex.Message, "Error en Alta");
-            }
-
-            return res;
-
-        }
+       
 
     }
 }
