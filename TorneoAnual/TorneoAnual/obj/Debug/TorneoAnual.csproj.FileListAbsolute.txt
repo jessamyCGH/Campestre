@@ -12,12 +12,15 @@ C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\bin\Debug\Mat
 C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\bin\Debug\MaterialDesignColors.pdb
 C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\obj\Debug\TorneoAnual.csprojAssemblyReference.cache
+C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\obj\Debug\Check.g.cs
 C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\obj\Debug\MainWindow.g.cs
 C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\obj\Debug\Registro.g.cs
 C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\obj\Debug\App.g.cs
 C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\obj\Debug\TorneoAnual_MarkupCompile.cache
 C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\obj\Debug\TorneoAnual_MarkupCompile.lref
 C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\obj\Debug\App.baml
+C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\obj\Debug\Check.baml
 C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\obj\Debug\MainWindow.baml
 C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\obj\Debug\Registro.baml
 C:\Users\jessa\Desktop\Proyecto Residencia\TorneoAnual\TorneoAnual\obj\Debug\TorneoAnual.g.resources

@@ -97,12 +97,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Check.xaml.cs">
+      <DependentUpon>Check.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\ConexionBD.cs" />
     <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Registro.xaml.cs">
       <DependentUpon>Registro.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
+    <Page Include="Check.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -129,7 +135,7 @@
     </Compile>
     <Page Include="Registro.xaml">
       <SubType>Designer</SubType>
-      <Generator>XamlIntelliSenseFileGenerator</Generator>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +175,35 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\autenticacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\alimentos.png" />
+    <Resource Include="Resources\Apertura.png" />
+    <Resource Include="Resources\Camara.png" />
+    <Resource Include="Resources\cerveza.png" />
+    <Resource Include="Resources\Clausura.png" />
+    <Resource Include="Resources\clubcampestre.ico" />
+    <Resource Include="Resources\concierto.png" />
+    <Resource Include="Resources\confi.png" />
+    <Resource Include="Resources\contract.png" />
+    <Resource Include="Resources\delete.png" />
+    <Resource Include="Resources\Edit.png" />
+    <Resource Include="Resources\Editar.png" />
+    <Resource Include="Resources\eraser.png" />
+    <Resource Include="Resources\false.png" />
+    <Resource Include="Resources\fingerprint.png" />
+    <Resource Include="Resources\flash.png" />
+    <Resource Include="Resources\fo.png" />
+    <Resource Include="Resources\golf.png" />
+    <Resource Include="Resources\huella.png" />
+    <Resource Include="Resources\justifi2.png" />
+    <Resource Include="Resources\logo2.png" />
+    <Resource Include="Resources\pagos.png" />
+    <Resource Include="Resources\personal.png" />
+    <Resource Include="Resources\register64.png" />
+    <Resource Include="Resources\tennis.png" />
+    <Resource Include="Resources\true.png" />
+    <Resource Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

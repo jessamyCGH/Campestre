@@ -31,5 +31,11 @@ namespace TorneoAnual
             registro.Show();
             
         }
+
+        private void btnChecador_Click(object sender, RoutedEventArgs e)
+        {
+            Check chec = new Check();
+            chec.Show();
+        }
     }
 }

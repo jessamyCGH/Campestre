@@ -6,8 +6,8 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:TorneoAnual"
         mc:Ignorable="d"
-        Title="Tablero" Height="720" Width="1000" Icon="Resources/logo.png">
-    <Grid VerticalAlignment="Bottom" Height="679" Background="#E9F2F4" >
+        Title="TorneoAnual Campestre" Height="720" Width="1000" Icon="Resources/logo.png">
+    <Grid VerticalAlignment="Bottom" Height="679" Background="#E9F2F4" RenderTransformOrigin="0.439,0.493" >
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200*"/>
@@ -17,7 +17,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <materialDesign:Card Grid.Column="1" Width="200" Height="319" Margin="50,130,50,0" VerticalAlignment="Top">
+        <materialDesign:Card Width="200" Height="319" Margin="158,155,138,0" VerticalAlignment="Top" Grid.ColumnSpan="2">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="140" />
@@ -38,7 +38,7 @@
             </Grid>
         </materialDesign:Card>
 
-        <materialDesign:Card Grid.Column="2" Width="200" Height="319" Margin="50,130,50,0" VerticalAlignment="Top">
+        <materialDesign:Card Grid.Column="1" Width="200" Height="319" Margin="203,155,197,0" VerticalAlignment="Top" Grid.ColumnSpan="2">
             <Grid Margin="0,1,0,-1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="140" />
@@ -47,7 +47,7 @@
                 </Grid.RowDefinitions>
                 <Image Source="Resources/checkout.png"  Height="140"  Width="196" Stretch="UniformToFill" />
                 <Button x:Name="btnChecador" Grid.Row="0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
-                HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 16 -20" >
+                HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,120,16,0" Grid.RowSpan="2" Click="btnChecador_Click" >
                     <materialDesign:PackIcon Kind="Fingerprint" />
                 </Button>
                 <StackPanel Grid.Row="1" Margin="8 24 8 0">

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,18 @@ namespace TorneoAnual
     /// </summary>
     public partial class Registro : Window
     {
+        Usuario usuario = new Usuario();
+        ConexionBD conexion = new ConexionBD();
+
+        ObservableCollection<string> TipoGolf = new ObservableCollection<string>();
+        ObservableCollection<string> TipoTenis = new ObservableCollection<string>();
+        ObservableCollection<string> Torneo = new ObservableCollection<string>();
         public Registro()
         {
             InitializeComponent();
+
+            //       CmbTorneo.ItemTemplate.LoadContent(conexion.obtenerTorneosActuales().ToArray());
+
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
@@ -57,7 +67,7 @@ namespace TorneoAnual
 
             try
             {
-                 Usuario usuario = new Usuario();
+                Usuario usuario = new Usuario();
                 usuario.Nombre = tbNombre.Text;
                 usuario.ApellidoP = tbApellidoP.Text;
                 usuario.ApellidoM = tbApellidoM.Text;
@@ -87,7 +97,7 @@ namespace TorneoAnual
                     tbCelular.Text = "";
                     tbUrlFoto.Text = "";
                     imgFoto.Source = null;
-                  //  dgEmpleados.DataContext = DatoEmpleado.MuestraEmpleados();
+                    //  dgEmpleados.DataContext = DatoEmpleado.MuestraEmpleados();
 
                 }
 

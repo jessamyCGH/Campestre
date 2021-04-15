@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:TorneoAnual"
         mc:Ignorable="d"
-        Title="Empleados" Height="700" Width="1000" >
+        Title="Registro" Height="700" Width="1000" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100*"/>
@@ -26,6 +26,10 @@
             materialDesign:HintAssist.Hint="Celular" x:Name="tbCelular" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Grid.Column="1" Margin="51,370,481,0" FontSize="20"/>
         <TextBox
             materialDesign:HintAssist.Hint="Club" x:Name="tbClub" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Grid.Column="1" Margin="51,437,481,0" FontSize="20" />
+        <ComboBox
+            materialDesign:HintAssist.Hint="Torneo" x:Name="CmbTorneo" Style="{StaticResource MaterialDesignFloatingHintComboBox}" VerticalAlignment="Top" Grid.Column="1" Margin="51,497,481,0" FontSize="20"  />
+        <ComboBox
+            materialDesign:HintAssist.Hint="Categoria" x:Name="CmbCategorias" Style="{StaticResource MaterialDesignFloatingHintComboBox}" VerticalAlignment="Top" Grid.Column="1" Margin="51,547,481,0" FontSize="20" />
 
         <Image Grid.Column="1" x:Name="imgFoto" Height="208" Margin="504,85,68,0" VerticalAlignment="Top" Stretch="Uniform" />
         <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Height="208" Margin="502,85,70,0" VerticalAlignment="Top" />
@@ -48,3 +52,5 @@
         <Image Grid.Column="1" x:Name="imgVerHuella" Source="Resources/autenticacion.png" Stretch="Uniform" Visibility="Hidden" Height="102" Margin="600,450,24,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
+
+
