@@ -1,14 +1,12 @@
 ﻿<Window x:Class="TorneoAnual.Check"
-          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-         
-  
-        xmlns:local="clr-namespace:TorneoAnual"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="Check-In" Height="757" Width="834">
+    
     <Grid Margin="0,0,2,-31">
         <Button
             Style="{StaticResource MaterialDesignRaisedButton}" x:Name="btnInaguracion" ToolTip="Editar foto" Margin="50,45,685,0" VerticalAlignment="Top" Click="btnInaguracion_Click" Height="80">
@@ -46,18 +44,18 @@
         <Label Content="Verificar Entrega" x:Name="lblEntregado" Height="49" Margin="540,0,59,555" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="26"/>
 
         <ComboBox
-            materialDesign:HintAssist.Hint="Categoria" x:Name="cbBoxNombre" Style="{StaticResource MaterialDesignFloatingHintComboBox}" VerticalAlignment="Top" Margin="50,250,387,0" FontSize="15" Height="50"  />
-        <Button x:Name="btnFalse" Grid.Row="0" Style="{StaticResource MaterialDesignRaisedButton}"
+            materialDesign:HintAssist.Hint="Ingresa el nombre" x:Name="cbBoxNombre" Style="{StaticResource MaterialDesignFloatingHintComboBox}" VerticalAlignment="Top" Margin="50,250,387,0" FontSize="15" Height="50" SelectionChanged="CbBoxNombre_SelectedValueChanged" />
+
+        <Button x:Name="btnFalse" Grid.Row="0" Style="{StaticResource MaterialDesignRaisedButton}" IsEnabled="False"
                 HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="0,0,44,437"  Height="110" Width="125" Background="Black">
             <Image Source="Resources/false.png"></Image>
         </Button>
-        <Button x:Name="btnTrue" Grid.Row="0" Style="{StaticResource MaterialDesignRaisedButton}"
+        <Button x:Name="btnTrue" Grid.Row="0" Style="{StaticResource MaterialDesignRaisedButton}" IsEnabled="False"
                 HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="0,0,174,437" Height="110" Width="125" Background="Black">
             <Image Source="Resources/True.png"></Image>
         </Button>
         <Button
             Style="{StaticResource MaterialDesignRaisedButton}" x:Name="btnEntregado" ToolTip="Editar foto" Visibility="Hidden" Margin="563,340,79,0" VerticalAlignment="Top" Click="btnEntregado_Click" Height="30" Content=""/>
-
 
     </Grid>
 </Window>
