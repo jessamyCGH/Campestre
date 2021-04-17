@@ -65,6 +65,7 @@ namespace WindowsFormsApp3
             this.BtnModificar = new System.Windows.Forms.Button();
             this.btnHuella = new System.Windows.Forms.Button();
             this.btnCamara = new System.Windows.Forms.Button();
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
@@ -73,6 +74,12 @@ namespace WindowsFormsApp3
             this.cmbTorneo = new System.Windows.Forms.ComboBox();
             this.cmbBusqueda = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+=======
+            this.Buscar = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -80,6 +87,131 @@ namespace WindowsFormsApp3
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.SuspendLayout();
             // 
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
+=======
+            // videoCapture1
+            // 
+            this.videoCapture1.Additional_Audio_CaptureDevice_MixChannels = false;
+            this.videoCapture1.Audio_CaptureDevice = "";
+            this.videoCapture1.Audio_CaptureDevice_CustomLatency = 0;
+            this.videoCapture1.Audio_CaptureDevice_Format = "";
+            this.videoCapture1.Audio_CaptureDevice_Format_UseBest = true;
+            this.videoCapture1.Audio_CaptureDevice_Line = "";
+            this.videoCapture1.Audio_CaptureDevice_MasterDevice = null;
+            this.videoCapture1.Audio_CaptureDevice_MasterDevice_Format = null;
+            this.videoCapture1.Audio_CaptureDevice_Path = null;
+            this.videoCapture1.Audio_CaptureSourceFilter = null;
+            this.videoCapture1.Audio_Channel_Mapper = null;
+            this.videoCapture1.Audio_Decoder = null;
+            this.videoCapture1.Audio_Effects_Enabled = false;
+            this.videoCapture1.Audio_Effects_UseLegacyEffects = false;
+            this.videoCapture1.Audio_Enhancer_Enabled = false;
+            this.videoCapture1.Audio_OutputDevice = "Default DirectSound Device";
+            this.videoCapture1.Audio_PCM_Converter = null;
+            this.videoCapture1.Audio_PlayAudio = true;
+            this.videoCapture1.Audio_RecordAudio = true;
+            this.videoCapture1.Audio_Sample_Grabber_Enabled = false;
+            this.videoCapture1.Audio_VUMeter_Enabled = false;
+            this.videoCapture1.Audio_VUMeter_Pro_Enabled = false;
+            this.videoCapture1.Audio_VUMeter_Pro_Volume = 100;
+            this.videoCapture1.BackColor = System.Drawing.Color.Black;
+            this.videoCapture1.Barcode_Reader_Enabled = false;
+            this.videoCapture1.Barcode_Reader_Type = VisioForge.Types.VFBarcodeType.Auto;
+            this.videoCapture1.BDA_Source = null;
+            this.videoCapture1.ChromaKey = null;
+            this.videoCapture1.Custom_Source = null;
+            this.videoCapture1.CustomRedist_Auto = true;
+            this.videoCapture1.CustomRedist_Enabled = false;
+            this.videoCapture1.CustomRedist_Path = null;
+            this.videoCapture1.Debug_Dir = "";
+            this.videoCapture1.Debug_DisableMessageDialogs = false;
+            this.videoCapture1.Debug_Mode = false;
+            this.videoCapture1.Debug_Telemetry = true;
+            this.videoCapture1.Decklink_Input = VisioForge.Types.DecklinkInput.Auto;
+            this.videoCapture1.Decklink_Input_Capture_Timecode_Source = VisioForge.Types.DecklinkCaptureTimecodeSource.Auto;
+            this.videoCapture1.Decklink_Input_IREUSA = false;
+            this.videoCapture1.Decklink_Input_SMPTE = false;
+            this.videoCapture1.Decklink_Output = null;
+            this.videoCapture1.Decklink_Source = null;
+            this.videoCapture1.DirectCapture_Muxer = null;
+            this.videoCapture1.DV_Decoder_Video_Resolution = VisioForge.Types.VFDVVideoResolution.Full;
+            this.videoCapture1.Face_Tracking = null;
+            this.videoCapture1.IP_Camera_Source = null;
+            this.videoCapture1.Location = new System.Drawing.Point(661, 77);
+            this.videoCapture1.Margin = new System.Windows.Forms.Padding(4);
+            this.videoCapture1.Mode = VisioForge.Types.VFVideoCaptureMode.VideoPreview;
+            this.videoCapture1.Motion_Detection = null;
+            this.videoCapture1.Motion_DetectionEx = null;
+            this.videoCapture1.MPEG_Audio_Decoder = "";
+            this.videoCapture1.MPEG_Demuxer = null;
+            this.videoCapture1.MPEG_Video_Decoder = "";
+            this.videoCapture1.MultiScreen_Enabled = false;
+            this.videoCapture1.Name = "videoCapture1";
+            this.videoCapture1.Network_Streaming_Audio_Enabled = false;
+            this.videoCapture1.Network_Streaming_Enabled = false;
+            this.videoCapture1.Network_Streaming_Format = VisioForge.Types.VFNetworkStreamingFormat.WMV;
+            this.videoCapture1.Network_Streaming_Network_Port = 100;
+            this.videoCapture1.Network_Streaming_Output = null;
+            this.videoCapture1.Network_Streaming_URL = "";
+            this.videoCapture1.Network_Streaming_WMV_Maximum_Clients = 10;
+            this.videoCapture1.OSD_Enabled = false;
+            this.videoCapture1.Output_Filename = "C:\\Users\\jessa\\Documents\\VisioForge\\output.avi";
+            this.videoCapture1.Output_Format = null;
+            this.videoCapture1.PIP_AddSampleGrabbers = false;
+            this.videoCapture1.PIP_ChromaKeySettings = null;
+            this.videoCapture1.PIP_Mode = VisioForge.Types.VFPIPMode.Custom;
+            this.videoCapture1.PIP_ResizeQuality = VisioForge.Types.VFPIPResizeQuality.RQ_NN;
+            this.videoCapture1.Push_Source = null;
+            this.videoCapture1.Screen_Capture_Source = null;
+            this.videoCapture1.SeparateCapture_AutostartCapture = false;
+            this.videoCapture1.SeparateCapture_Enabled = false;
+            this.videoCapture1.SeparateCapture_Filename_Mask = "output %yyyy-%MM-%dd %hh-%mm-%ss.%ext";
+            this.videoCapture1.SeparateCapture_FileSizeThreshold = ((long)(0));
+            this.videoCapture1.SeparateCapture_GMFMode = true;
+            this.videoCapture1.SeparateCapture_Mode = VisioForge.Types.VFSeparateCaptureMode.Normal;
+            this.videoCapture1.SeparateCapture_TimeThreshold = System.TimeSpan.Parse("00:00:00");
+            this.videoCapture1.Size = new System.Drawing.Size(315, 249);
+            this.videoCapture1.Start_DelayEnabled = false;
+            this.videoCapture1.TabIndex = 85;
+            this.videoCapture1.Tags = null;
+            this.videoCapture1.Timeshift_Settings = null;
+            this.videoCapture1.TVTuner_Channel = 0;
+            this.videoCapture1.TVTuner_Country = "";
+            this.videoCapture1.TVTuner_FM_Tuning_StartFrequency = 80000000;
+            this.videoCapture1.TVTuner_FM_Tuning_Step = 160000000;
+            this.videoCapture1.TVTuner_FM_Tuning_StopFrequency = 0;
+            this.videoCapture1.TVTuner_Frequency = 0;
+            this.videoCapture1.TVTuner_InputType = "";
+            this.videoCapture1.TVTuner_Mode = VisioForge.Types.VFTVTunerMode.Default;
+            this.videoCapture1.TVTuner_Name = "";
+            this.videoCapture1.TVTuner_TVFormat = VisioForge.Types.VFTVTunerVideoFormat.PAL_D;
+            this.videoCapture1.Video_CaptureDevice = "";
+            this.videoCapture1.Video_CaptureDevice_Format = "";
+            this.videoCapture1.Video_CaptureDevice_Format_UseBest = true;
+            this.videoCapture1.Video_CaptureDevice_FrameRate = 25D;
+            this.videoCapture1.Video_CaptureDevice_InternalMPEGEncoder_Name = "";
+            this.videoCapture1.Video_CaptureDevice_IsAudioSource = false;
+            this.videoCapture1.Video_CaptureDevice_Path = null;
+            this.videoCapture1.Video_CaptureDevice_UseClosedCaptions = false;
+            this.videoCapture1.Video_CaptureDevice_UseRAWSampleGrabber = false;
+            this.videoCapture1.Video_Crop = null;
+            this.videoCapture1.Video_Decoder = null;
+            this.videoCapture1.Video_Effects_AllowMultipleStreams = false;
+            this.videoCapture1.Video_Effects_Enabled = false;
+            this.videoCapture1.Video_Effects_GPU_Enabled = false;
+            this.videoCapture1.Video_Effects_MergeImageLogos = false;
+            this.videoCapture1.Video_Effects_MergeTextLogos = false;
+            this.videoCapture1.Video_Resize = null;
+            this.videoCapture1.Video_ResizeOrCrop_Enabled = false;
+            this.videoCapture1.Video_Rotation = VisioForge.Types.VFRotateMode.RotateNone;
+            this.videoCapture1.Video_Sample_Grabber_Enabled = true;
+            this.videoCapture1.Video_Sample_Grabber_UseForVideoEffects = true;
+            this.videoCapture1.Video_Still_Frames_Grabber_Enabled = false;
+            this.videoCapture1.Virtual_Camera_Output_Enabled = false;
+            this.videoCapture1.Virtual_Camera_Output_LicenseKey = null;
+            this.videoCapture1.VLC_Path = null;
+            // 
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             // panel1
             // 
             this.panel1.Controls.Add(this.panel2);
@@ -103,8 +235,12 @@ namespace WindowsFormsApp3
             // 
             this.lbltTitulo.AutoSize = true;
             this.lbltTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.lbltTitulo.Location = new System.Drawing.Point(230, 6);
             this.lbltTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+=======
+            this.lbltTitulo.Location = new System.Drawing.Point(307, 8);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.lbltTitulo.Name = "lbltTitulo";
             this.lbltTitulo.Size = new System.Drawing.Size(391, 39);
             this.lbltTitulo.TabIndex = 0;
@@ -119,9 +255,17 @@ namespace WindowsFormsApp3
             this.groupBox2.Controls.Add(this.chkGolf);
             this.groupBox2.Controls.Add(this.chkTenis);
             this.groupBox2.Controls.Add(this.label9);
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.groupBox2.Location = new System.Drawing.Point(60, 304);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(314, 162);
+=======
+            this.groupBox2.Location = new System.Drawing.Point(80, 374);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(419, 199);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.groupBox2.TabIndex = 81;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Categoria";
@@ -169,7 +313,12 @@ namespace WindowsFormsApp3
             // chkGolf
             // 
             this.chkGolf.AutoSize = true;
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.chkGolf.Location = new System.Drawing.Point(134, 23);
+=======
+            this.chkGolf.Location = new System.Drawing.Point(179, 28);
+            this.chkGolf.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.chkGolf.Name = "chkGolf";
             this.chkGolf.Size = new System.Drawing.Size(45, 17);
             this.chkGolf.TabIndex = 3;
@@ -179,7 +328,12 @@ namespace WindowsFormsApp3
             // chkTenis
             // 
             this.chkTenis.AutoSize = true;
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.chkTenis.Location = new System.Drawing.Point(32, 23);
+=======
+            this.chkTenis.Location = new System.Drawing.Point(43, 28);
+            this.chkTenis.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.chkTenis.Name = "chkTenis";
             this.chkTenis.Size = new System.Drawing.Size(52, 17);
             this.chkTenis.TabIndex = 2;
@@ -211,9 +365,17 @@ namespace WindowsFormsApp3
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.label2);
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.groupBox1.Location = new System.Drawing.Point(60, 332);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(309, 109);
+=======
+            this.groupBox1.Location = new System.Drawing.Point(80, 409);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(412, 134);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.groupBox1.TabIndex = 76;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Categoria";
@@ -221,7 +383,12 @@ namespace WindowsFormsApp3
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.checkBox2.Location = new System.Drawing.Point(149, 19);
+=======
+            this.checkBox2.Location = new System.Drawing.Point(199, 23);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(80, 17);
             this.checkBox2.TabIndex = 3;
@@ -231,7 +398,12 @@ namespace WindowsFormsApp3
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.checkBox1.Location = new System.Drawing.Point(27, 19);
+=======
+            this.checkBox1.Location = new System.Drawing.Point(36, 23);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(80, 17);
             this.checkBox1.TabIndex = 2;
@@ -250,42 +422,72 @@ namespace WindowsFormsApp3
             // 
             // txtCorreo
             // 
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.txtCorreo.Location = new System.Drawing.Point(155, 255);
+=======
+            this.txtCorreo.Location = new System.Drawing.Point(207, 314);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(250, 20);
             this.txtCorreo.TabIndex = 75;
             // 
             // txtCelular
             // 
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.txtCelular.Location = new System.Drawing.Point(155, 226);
+=======
+            this.txtCelular.Location = new System.Drawing.Point(207, 278);
+            this.txtCelular.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(250, 20);
             this.txtCelular.TabIndex = 74;
             // 
             // txtClub
             // 
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.txtClub.Location = new System.Drawing.Point(155, 202);
+=======
+            this.txtClub.Location = new System.Drawing.Point(207, 248);
+            this.txtClub.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.txtClub.Name = "txtClub";
             this.txtClub.Size = new System.Drawing.Size(250, 20);
             this.txtClub.TabIndex = 73;
             // 
             // txtMaterno
             // 
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.txtMaterno.Location = new System.Drawing.Point(155, 176);
+=======
+            this.txtMaterno.Location = new System.Drawing.Point(207, 216);
+            this.txtMaterno.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.txtMaterno.Name = "txtMaterno";
             this.txtMaterno.Size = new System.Drawing.Size(250, 20);
             this.txtMaterno.TabIndex = 72;
             // 
             // txtPaterno
             // 
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.txtPaterno.Location = new System.Drawing.Point(155, 150);
+=======
+            this.txtPaterno.Location = new System.Drawing.Point(207, 184);
+            this.txtPaterno.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.txtPaterno.Name = "txtPaterno";
             this.txtPaterno.Size = new System.Drawing.Size(250, 20);
             this.txtPaterno.TabIndex = 71;
             // 
             // txtNombre
             // 
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.txtNombre.Location = new System.Drawing.Point(155, 124);
+=======
+            this.txtNombre.Location = new System.Drawing.Point(207, 152);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(250, 20);
             this.txtNombre.TabIndex = 70;
@@ -352,6 +554,7 @@ namespace WindowsFormsApp3
             // 
             // btnBorrar
             // 
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.btnBorrar.Image = global::WindowsFormsApp3.Properties.Resources.delete;
             this.btnBorrar.Location = new System.Drawing.Point(608, 463);
             this.btnBorrar.Name = "btnBorrar";
@@ -359,21 +562,42 @@ namespace WindowsFormsApp3
             this.btnBorrar.TabIndex = 87;
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+=======
+            this.button1.Image = global::WindowsFormsApp3.Properties.Resources.delete;
+            this.button1.Location = new System.Drawing.Point(719, 525);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(81, 80);
+            this.button1.TabIndex = 87;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.pictureBox1.Location = new System.Drawing.Point(664, 377);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(49, 54);
+=======
+            this.pictureBox1.Location = new System.Drawing.Point(808, 407);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 67);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.pictureBox1.TabIndex = 86;
             this.pictureBox1.TabStop = false;
             // 
             // btnLimpiar
             // 
             this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.btnLimpiar.Location = new System.Drawing.Point(675, 463);
+=======
+            this.btnLimpiar.Location = new System.Drawing.Point(808, 525);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(61, 65);
             this.btnLimpiar.TabIndex = 83;
@@ -385,7 +609,12 @@ namespace WindowsFormsApp3
             // btnCapturar
             // 
             this.btnCapturar.Image = ((System.Drawing.Image)(resources.GetObject("btnCapturar.Image")));
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.btnCapturar.Location = new System.Drawing.Point(664, 297);
+=======
+            this.btnCapturar.Location = new System.Drawing.Point(841, 333);
+            this.btnCapturar.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.btnCapturar.Name = "btnCapturar";
             this.btnCapturar.Size = new System.Drawing.Size(49, 39);
             this.btnCapturar.TabIndex = 82;
@@ -395,7 +624,12 @@ namespace WindowsFormsApp3
             // BtnModificar
             // 
             this.BtnModificar.Image = ((System.Drawing.Image)(resources.GetObject("BtnModificar.Image")));
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.BtnModificar.Location = new System.Drawing.Point(740, 463);
+=======
+            this.BtnModificar.Location = new System.Drawing.Point(895, 525);
+            this.BtnModificar.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(61, 63);
             this.BtnModificar.TabIndex = 80;
@@ -406,7 +640,12 @@ namespace WindowsFormsApp3
             // btnHuella
             // 
             this.btnHuella.Image = ((System.Drawing.Image)(resources.GetObject("btnHuella.Image")));
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.btnHuella.Location = new System.Drawing.Point(540, 463);
+=======
+            this.btnHuella.Location = new System.Drawing.Point(628, 525);
+            this.btnHuella.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.btnHuella.Name = "btnHuella";
             this.btnHuella.Size = new System.Drawing.Size(61, 65);
             this.btnHuella.TabIndex = 79;
@@ -416,7 +655,12 @@ namespace WindowsFormsApp3
             // btnCamara
             // 
             this.btnCamara.Image = ((System.Drawing.Image)(resources.GetObject("btnCamara.Image")));
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.btnCamara.Location = new System.Drawing.Point(595, 297);
+=======
+            this.btnCamara.Location = new System.Drawing.Point(756, 333);
+            this.btnCamara.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.btnCamara.Name = "btnCamara";
             this.btnCamara.Size = new System.Drawing.Size(49, 39);
             this.btnCamara.TabIndex = 77;
@@ -425,6 +669,7 @@ namespace WindowsFormsApp3
             // 
             // BtnBuscar
             // 
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.BtnBuscar.Location = new System.Drawing.Point(487, 16);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnBuscar.Name = "BtnBuscar";
@@ -432,25 +677,60 @@ namespace WindowsFormsApp3
             this.BtnBuscar.TabIndex = 90;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+=======
+            // Buscar
+            // 
+            this.Buscar.Controls.Add(this.btnBuscar);
+            this.Buscar.Controls.Add(this.label10);
+            this.Buscar.Controls.Add(this.textBox1);
+            this.Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Buscar.Location = new System.Drawing.Point(90, 77);
+            this.Buscar.Name = "Buscar";
+            this.Buscar.Size = new System.Drawing.Size(553, 56);
+            this.Buscar.TabIndex = 88;
+            this.Buscar.TabStop = false;
+            this.Buscar.Text = "Buscar";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(82, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(332, 22);
+            this.textBox1.TabIndex = 0;
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.label10.Location = new System.Drawing.Point(20, 22);
+=======
+            this.label10.Location = new System.Drawing.Point(8, 22);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 16);
             this.label10.TabIndex = 89;
             this.label10.Text = "Nombre:";
             // 
-            // TxtBuscar
+            // btnBuscar
             // 
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.TxtBuscar.Location = new System.Drawing.Point(124, 19);
             this.TxtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtBuscar.Name = "TxtBuscar";
             this.TxtBuscar.Size = new System.Drawing.Size(332, 20);
             this.TxtBuscar.TabIndex = 0;
+=======
+            this.btnBuscar.Location = new System.Drawing.Point(436, 18);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 90;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             // 
             // picFoto
             // 
@@ -532,7 +812,10 @@ namespace WindowsFormsApp3
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
             this.Margin = new System.Windows.Forms.Padding(2);
+=======
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
             this.Name = "Modificar";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -588,11 +871,15 @@ namespace WindowsFormsApp3
       
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.Label label10;
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Modificar.Designer.cs
         private System.Windows.Forms.TextBox TxtBuscar;
         private System.Windows.Forms.PictureBox picFoto;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbTorneo;
         private System.Windows.Forms.ComboBox cmbBusqueda;
         private System.Windows.Forms.Button button1;
+=======
+        private System.Windows.Forms.TextBox textBox1;
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Modificar.Designer.cs
     }
 }

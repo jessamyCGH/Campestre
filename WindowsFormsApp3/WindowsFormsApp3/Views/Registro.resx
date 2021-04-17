@@ -409,6 +409,7 @@
         YLrVYtpsq2U6Hdl/w/QInAncCeg/3n9sLNbvoukbGoX2Bi4AAAAASUVORK5CYII=
 </value>
   </data>
+<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/Views/Registro.resx
   <data name="picFoto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
@@ -536,4 +537,6 @@
         jQAAAABJRU5ErkJggg==
 </value>
   </data>
+=======
+>>>>>>> parent of 6b06c91... Camar, Foto:WindowsFormsApp3/WindowsFormsApp3/Registro.resx
 </root>

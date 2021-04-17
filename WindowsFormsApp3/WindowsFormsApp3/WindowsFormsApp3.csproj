@@ -136,6 +136,7 @@
     <Compile Include="Views\CaptureForm.Designer.cs">
       <DependentUpon>CaptureForm.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Views\Check.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +146,9 @@
     <Compile Include="Modelos\HuellaClass.cs" />
     <Compile Include="Modelos\Conexion.cs" />
     <Compile Include="Views\Modificar.cs">
+=======
+    <Compile Include="Modificar.cs">
+>>>>>>> parent of 6b06c91... Camar, Foto
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Modificar.Designer.cs">
